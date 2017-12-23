@@ -2,8 +2,10 @@ module.exports = {
   plugins: ['~plugins/vue-lazyload', '~plugins/app'],
   env: {
     // your JSON API server URL :
-    jsonApiServer: 'https://live-contentacms.pantheonsite.io',
-    jsonApiPrefix: 'api'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    jsonApiServer: process.env.JSON_API_SERVER || 'http://imfaber-cms.docker.localhost:8000',
+    // jsonApiServer: 'https://live-contentacms.pantheonsite.io',
+    jsonApiPrefix: process.env.JSON_API_PREFIX || 'api'
   },
   router: {
      // check API server is up, to avoid ugly errors pages
