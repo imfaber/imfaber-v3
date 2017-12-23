@@ -21,6 +21,7 @@
       <div id="app-menu" class="navbar-menu" :class="{'is-active': this.$store.state.menuMobileIsOpened}">
         <div class="navbar-end">
           <nuxt-link to="/" class="navbar-item"> Home </nuxt-link>
+          <nuxt-link to="/works" class="navbar-item"> Works </nuxt-link>
           <nuxt-link to="/recipes" class="navbar-item"> Recipes </nuxt-link>
           <a href="https://github.com/contentacms/contenta_vue_nuxt" class="navbar-item"> Github </a>
           <a href="http://www.contentacms.org/" class="navbar-item"> ContentaCMS website </a>
