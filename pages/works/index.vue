@@ -1,5 +1,5 @@
 <template>
-    <PageWorksIndex/>
+    <PageWorksIndex v-bind="{works}"/>
 </template>
 
 <script>
@@ -9,18 +9,20 @@
     transition: 'page',
     components: {PageWorksIndex},
 
-    async fetch ({store, query}) {
-      const filter  = query.filter
-      const offset  = query.page || 0
-      const limit   = 40
+    async asyncData ({store, query}) {
+      const filter = query.filter
+      const offset = query.page || 0
+      const limit  = 40
+      let works    = [];
 
       if (filter) {
 
       }
       else {
-        await store.dispatch('works/findAllLatestWorks', limit, offset);
+        works = await store.dispatch('works/findAll', limit, offset);
       }
 
+      return { works };
     }
   }
 </script>

@@ -21,23 +21,39 @@ export const getters = {
 
 export const actions = {
 
-  async findAllLatestWorks ({commit}, limit = 4, offset = 0) {
+  async findOneBySlug ({commit}, slug) {
+    const query = {
+      include: 'image,image.thumbnail',
+      filter: {
+        slug: {
+          path: 'slug',
+          value: slug
+        },
+        status: {
+          path: 'status',
+          value: 1
+        }
+      }
+    }
+    const res = await jsonApi.get('works', query)
+    return res[0] || {}
+  },
 
+  async findAll ({commit}, limit = 4, offset = 0) {
     const query = {
       sort:    '-created',
       page:    {
         limit
       },
-      include: 'main_image,main_image.thumbnail',
+      include: 'image,image.thumbnail',
       fields:  {
-        works: 'title,technology,main_image,path',
+        works: 'title,technology,image,slug',
         images:  'name,thumbnail',
         files:   'filename,url'
       }
     }
 
-    const items = await jsonApi.get('works', query)
-    commit('list', items)
+    return await jsonApi.get('works', query)
   },
 
 }

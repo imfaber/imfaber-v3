@@ -4,7 +4,7 @@
     <AppSection class="hero is-primary">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-1"> {{ recipe.title }} </h1>
+          <h1 class="title is-1"> {{ work.title }} </h1>
         </div>
       </div>
     </AppSection>
@@ -15,7 +15,7 @@
         <div class="columns">
           <div class="column">
             <figure class="image is-3by2">
-              <img v-lazy="recipe.image.thumbnail.url" />
+              <img v-lazy="work.image.thumbnail.url" />
             </figure>
           </div>
           <div class="column">
@@ -25,14 +25,14 @@
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
                 Preparation Time :
-                <strong>{{recipe.preparationTime }} min </strong>
+                <strong>{{work.preparationTime }} min </strong>
               </div>
               <div class="column has-text-centered">
                 <div>
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
                 Cooking time :
-                <strong> {{recipe.totalTime }} min</strong>
+                <strong> {{work.totalTime }} min</strong>
               </div>
             </div>
   
@@ -42,14 +42,14 @@
                   <img class="icons" src="~assets/icons/serves.svg" />
                 </div>
                 Serves :
-                <strong>{{recipe.numberOfServices}} persons </strong>
+                <strong>{{work.numberOfServices}} persons </strong>
               </div>
               <div class="column has-text-centered">
                 <div>
                   <img class="icons" src="~assets/icons/difficulty.svg" />
                 </div>
                 Difficulty :
-                <strong>{{ recipe.Difficulty }}</strong>
+                <strong>{{ work.Difficulty }}</strong>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@
             <div class="content notification">
               <h3 class="has-text-centered"> Ingredients </h3>
               <ul class="ingredients">
-                <li v-for="(ingredient, index) in recipe.ingredients" :key="index">
+                <li v-for="(ingredient, index) in work.ingredients" :key="index">
                   {{ingredient}}
                 </li>
               </ul>
@@ -79,7 +79,7 @@
             <div class="content method">
               <h3 class="title has-text-centered"> Method </h3>
               <p>
-                {{recipe.instructions}}
+                {{work.instructions}}
               </p>
             </div>
   
@@ -97,7 +97,10 @@ import AppSection from '~/components/AppSection'
 export default {
   components: { AppSection },
   props: {
-    recipe: { type: Object, default: {} }
+    work: { type: Object, default: {} }
+  },
+  mounted () {
+//    debugger
   }
 }
 </script>
@@ -115,4 +118,5 @@ export default {
 }
 
 </style>
+
 
