@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{backgroundColor: work.background_color.color, color: work.text_color.color}">
   
     <AppSection class="hero is-primary">
       <div class="hero-body">
@@ -93,14 +93,14 @@
 </template>
 
 <script>
-import AppSection from '~/components/AppSection'
+import AppSection from '../AppSection'
 export default {
   components: { AppSection },
   props: {
     work: { type: Object, default: {} }
   },
   mounted () {
-//    debugger
+//    console.log(this.work);
   }
 }
 </script>

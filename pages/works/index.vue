@@ -22,7 +22,14 @@
         works = await store.dispatch('works/findAll', limit, offset);
       }
 
-      return { works };
+      const meta = {
+        title: 'Work',
+        description: 'Checkout my web portfolio',
+        url: `${process.env.baseUrl}/works`,
+//        image: work.image.thumbnail.url,
+      }
+
+      return { works, meta };
     }
   }
 </script>
