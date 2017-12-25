@@ -1,5 +1,4 @@
-import jsonApiClient from '../lib/jsonApiClient'
-const jsonApi = jsonApiClient()
+import jsonApi from '../lib/jsonApiClient'
 
 export const strict = true
 
