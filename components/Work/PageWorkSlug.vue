@@ -15,7 +15,7 @@
     },
     mounted () {
 //      debugger
-//      console.log(this.work);
+      console.log(this.work);
     }
   }
 </script>

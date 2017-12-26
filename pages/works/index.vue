@@ -15,21 +15,32 @@
       const limit  = 40
       let works    = [];
 
-      if (filter) {
+      console.log(filter);
+      store.dispatch('works/fetchFilters');
 
-      }
-      else {
-        works = await store.dispatch('works/findAll', limit, offset);
-      }
+//      if (filter) {
+//        works = await store.dispatch('works/findAllByTechAndSkills', filter, limit, offset);
+//      }
+//      else {
+//        works = await store.dispatch('works/findAll', limit, offset);
+//      }
 
       const meta = {
-        title: 'Work',
+        title:       'Work',
         description: 'Checkout my web portfolio',
-        url: `${process.env.baseUrl}/works`,
+        url:         `${process.env.baseUrl}/works`,
 //        image: work.image.thumbnail.url,
       }
 
-      return { works, meta };
-    }
+      return {works, meta};
+    },
+
+//    async fetch ({store}) {
+//      if (store.getters['works/filters'].length) {
+//        return
+//      }
+//      const terms = await store.dispatch('works/fetchFilters');
+//      store.commit('works/filters', terms)
+//    }
   }
 </script>
