@@ -22,10 +22,9 @@ import AppSection from '~/components/AppSection'
 
 export default {
   components: { AppSection },
-  computed: {
-    filters () {
-      return this.$store.getters['works/filters']
-    }
+  props: {
+    filter: { type: String, default: "4" },
+    items: { type: Array, default: [] }
   },
 }
 </script>

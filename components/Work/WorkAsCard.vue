@@ -10,6 +10,11 @@
       <div slot="content" class="has-text-centered">
         <div class="description">
           <h3 class="title is-5">{{ work.title }}</h3>
+          <ul>
+            <li v-for="item in work.technology">
+              <span class="tag is-light">{{item.name}}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </BulmaCard>
@@ -22,6 +27,9 @@ export default {
   components: { BulmaCard },
   props: {
     work: { type: Object, default: () => [] }
+  },
+  mounted () {
+    console.log(this.work);
   }
 }
 </script>

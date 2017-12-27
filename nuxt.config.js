@@ -22,6 +22,11 @@ module.exports = {
     extend (config) {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
+    },
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
     }
   },
 
@@ -35,10 +40,15 @@ module.exports = {
       {name: 'HandheldFriendly', content: 'true'},
     ],
     link: [
-      {rel: 'stylesheet', type: 'text/css', href: '/css/bulma-4.3.css'},
       {rel: 'stylesheet', type: 'text/css', href: '/css/app.css'}
     ]
   },
+
+  css: [
+    // include bulma module
+    'bulma',
+  ],
+
   /*
    ** Customize the progress-bar color
    */

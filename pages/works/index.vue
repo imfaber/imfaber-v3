@@ -18,12 +18,12 @@
       console.log(filter);
       store.dispatch('works/fetchFilters');
 
-//      if (filter) {
-//        works = await store.dispatch('works/findAllByTechAndSkills', filter, limit, offset);
-//      }
-//      else {
-//        works = await store.dispatch('works/findAll', limit, offset);
-//      }
+      if (filter && filter.length) {
+        works = await store.dispatch('works/findAllByTechAndSkills', filter, limit, offset);
+      }
+      else {
+        works = await store.dispatch('works/findAll', limit, offset);
+      }
 
       const meta = {
         title:       'Work',
@@ -35,12 +35,12 @@
       return {works, meta};
     },
 
-//    async fetch ({store}) {
-//      if (store.getters['works/filters'].length) {
-//        return
-//      }
-//      const terms = await store.dispatch('works/fetchFilters');
-//      store.commit('works/filters', terms)
-//    }
+    async fetch ({store}) {
+      if (store.getters['works/filters'].length) {
+        return
+      }
+      const terms = await store.dispatch('works/fetchFilters');
+      store.commit('works/filters', terms)
+    }
   }
 </script>

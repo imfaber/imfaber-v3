@@ -1,9 +1,9 @@
 <template>
     <div class="recipes">
         <BulmaGrid :items="works" :itemsByRow="cardsByRow">
-        <template scope="props">
-        <WorkAsCard :work="props.item"></WorkAsCard>
-        </template>
+            <template scope="props">
+                <WorkAsCard :work="props.item"></WorkAsCard>
+            </template>
         </BulmaGrid>
     </div>
 </template>

@@ -61,7 +61,7 @@ export const actions = {
   async findAllByTechAndSkills ({commit}, termMachineName, limit = 4, offset = 0) {
     const query = {
       sort:    '-created',
-      include: 'image,image.thumbnail',
+      include: 'image,image.thumbnail,technology',
       fields:  {
         works:  'title,technology,image,slug',
         images: 'name,thumbnail',
@@ -92,7 +92,7 @@ export const actions = {
   async findAll ({commit}, limit = 4, offset = 0) {
     const query = {
       sort:    '-created',
-      include: 'image,image.thumbnail',
+      include: 'image,image.thumbnail,technology',
       fields:  {
         works:  'title,technology,image,slug',
         images: 'name,thumbnail',
