@@ -12,7 +12,6 @@ export const mutations = {
     state.list = items
   },
   filters (state, filters) {
-    console.log('sss');
     state.filters = filters;
   }
 }

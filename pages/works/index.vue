@@ -15,7 +15,6 @@
       const limit  = 40
       let works    = [];
 
-      console.log(filter);
       store.dispatch('works/fetchFilters');
 
       if (filter && filter.length) {
