@@ -6,7 +6,6 @@
   import PageWorksIndex from '~/components/Work/PageWorksIndex.vue'
 
   export default {
-    transition: 'page',
     components: {PageWorksIndex},
 
     async asyncData ({store, query}) {

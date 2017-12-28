@@ -1,0 +1,24 @@
+<template>
+    <span :style="{width: size, height: size}">
+        <svg enable-background="new 0 0 260 260" version="1.1" viewBox="0 0 260 260" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+            <path :style="{fill: mainColor}" d="m41 90.4v147.8c0 6.5-1.9 11.8-5.6 15.8-3.8 4-8.8 6-15.1 6s-11.3-1.9-14.9-5.8-5.4-9.2-5.4-16v-215c0-7 2-12.6 6-16.9 4-4.2 7.8-6.3 14.6-6.3 9.4 0 20.5 7.2 20.5 23.6l-0.1 66.8z"/>
+            <path :style="{fill: secondaryColor}" class="st0" d="m254.8 6.6c4.1 4.2 6.2 9.8 6.2 16.8v214.6c0 6.8-1.9 12.1-5.8 15.9-3.9 3.9-8.9 5.8-15.2 5.8s-11.2-1.9-14.9-5.8c-3.6-3.9-5.4-9.2-5.4-15.9v-149.3l-61.6 116.7c-2.9 5.3-6 9.2-9.4 11.8-3.4 2.5-7.4 3.8-12 3.8s-8.6-1.2-12-3.6-6.5-6.4-9.4-12l-74.2-109.4s-1.4-43.4-0.9-80l96.9 153.1 80.1-153.3c5.3-10.4 12.4-15.6 21.4-15.6 6.7 0.1 12.1 2.2 16.2 6.4z"/>
+        </svg>
+    </span>
+</template>
+
+<script>
+  export default {
+    props: {
+      mainColor:      {type: String, default: 'rgba(255, 255, 255, .8)'},
+      secondaryColor: {type: String, default: 'rgba(255, 255, 255, .3)'},
+      size:           {type: String, default: '30px'},
+    }
+  }
+</script>
+
+<style scoped>
+    span {
+        display: inline-block;
+    }
+</style>

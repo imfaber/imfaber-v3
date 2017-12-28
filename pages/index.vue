@@ -7,7 +7,6 @@ import PageIndex from '~/components/PageIndex'
 import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/lib/api'
 
 export default {
-  transition: 'page',
   components: { PageIndex },
   async asyncData ({ params }) {
     return Promise.all([

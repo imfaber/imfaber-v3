@@ -1,0 +1,8 @@
+@at-root {
+  @include font-face("Nunito", "~/assets/fonts/nunito/nunito-v9-latin-regular");
+  @include font-face("NunitoBold", "~/assets/fonts/nunito/nunito-v9-latin-700", 700);
+}
+
+body {
+  font-family: Nunito, Helvetica Neue, Helvetica, Arial, sans-serif;
+}

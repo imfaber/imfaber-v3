@@ -1,0 +1,10 @@
+// V-lazy
+img[lazy=loading] {
+  opacity: 0;
+}
+
+img[lazy=loaded] {
+  transition: opacity 1s;
+  opacity: 1;
+}
+

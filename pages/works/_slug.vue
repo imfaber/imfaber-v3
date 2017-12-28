@@ -7,7 +7,6 @@ import PageWorkSlug from '~/components/Work/PageWorkSlug'
 import striptags from 'striptags'
 
 export default {
-  transition: 'page',
   components: { PageWorkSlug },
   async asyncData ({ store, params }) {
     const work = await store.dispatch('works/findOneBySlug', params.slug);

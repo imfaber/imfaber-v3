@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['~plugins/vue-lazyload', '~plugins/app', '~/plugins/head'],
+  plugins: ['~plugins/vue-lazyload', '~plugins/app', '~/plugins/page-mixins'],
   env:     {
     // your JSON API server URL :
     baseUrl:       process.env.BASE_URL || 'http://localhost:3000',
@@ -39,20 +39,19 @@ module.exports = {
       {name: 'MobileOptimized', content: 'width'},
       {name: 'HandheldFriendly', content: 'true'},
     ],
-    link: [
-      {rel: 'stylesheet', type: 'text/css', href: '/css/app.css'}
-    ]
   },
 
   css: [
-    // include bulma module
-    'bulma',
+    '@/assets/scss/main.scss'
   ],
 
   /*
    ** Customize the progress-bar color
    */
-  loading: {color: '#3B8070'},
+  loading: {
+    color: 'rgba(255, 255, 255, .7)',
+    height: '5px'
+  },
 
   /*
    ** Modules
