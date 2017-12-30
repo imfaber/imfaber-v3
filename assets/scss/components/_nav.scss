@@ -32,7 +32,7 @@
     }
   }
 
-  .is-active & {
+  &.is-active {
     i:nth-child(1) {
       transform: translateY(10px) rotate(135deg) scale(1.0);
     }

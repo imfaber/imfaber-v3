@@ -1,12 +1,12 @@
 <template>
-    <nav class="navbar is-transparent"
-         :class="{'is-active': this.$store.state.menuMobileIsOpened}">
+    <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <nuxt-link to="/" class="navbar-item">
                 <AppLogo></AppLogo>
                 <span>faber</span>
             </nuxt-link>
             <div @click="setMenuMobileIsOpened" class="navbar-burger"
+                 :class="{'is-active': this.$store.state.menuMobileIsOpened}"
                  data-target="app-menu">
                 <i></i>
                 <i></i>
@@ -14,10 +14,9 @@
             </div>
         </div>
 
-        <div id="app-menu" class="navbar-menu">
+        <div id="app-menu" class="navbar-menu" :class="{'is-active': this.$store.state.menuMobileIsOpened}">
             <div class="navbar-start">
-                <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-                <nuxt-link to="/works" class="navbar-item">Work</nuxt-link>
+                <nuxt-link to="/work" class="navbar-item">Work</nuxt-link>
                 <nuxt-link to="/lab" class="navbar-item">Lab</nuxt-link>
                 <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
             </div>

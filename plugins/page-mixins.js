@@ -48,9 +48,9 @@ const PageMixins = {
 
         const navRouteOrder = {
           'index':    0,
-          'works':    1,
+          'work':    1,
           'about':    2,
-          'recipies': 3,
+          'lab': 3,
           'contact':  4
         }
 

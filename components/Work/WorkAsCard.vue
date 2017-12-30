@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="{path: '/works/' + work.slug.value}">
+    <nuxt-link :to="{path: '/work/' + work.slug.value}">
         <BulmaCard>
             <div slot="image" v-if="work.image" class="">
                 <figure class="image is-3by2">

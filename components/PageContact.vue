@@ -1,5 +1,5 @@
 <template>
-  <AppSection>
+  <AppSection class="page page--contact">
     <div class="container">
       <div class="content">
         <h1 class="has-text-centered">Get in touch</h1>
@@ -20,3 +20,9 @@ export default {
   components: { ContactForm, AppSection }
 }
 </script>
+
+<style scoped lang="scss">
+  .page--contact {
+    background: #60d7a9;
+  }
+</style>

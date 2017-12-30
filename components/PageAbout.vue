@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="about">
 
         <div>
             <h1>Hello, my name is Fabrizio Meinero.</h1>
@@ -15,31 +15,17 @@
 </template>
 
 <script>
-  import Typed from 'typed.js'
+
 
   export default {
     mounted(){
-      const typed = new Typed('.typed-text', {
-        strings:    [
-          "web applications",
-          "corporate websites",
-          "user interfaces",
-          "dev tools",
-          "communities",
-          "online shops",
-        ],
-        typeSpeed:  30,
-        backSpeed:  20,
-        backDelay:  2000,
-        cursorChar: '_',
-        loop:       true,
-      });
+
     }
   }
 </script>
 
 <style scoped lang="scss">
-    .hello {
+    .about {
         margin: 40px 0;
         text-align: center;
         display: flex;

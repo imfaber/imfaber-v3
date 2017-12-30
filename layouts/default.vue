@@ -23,9 +23,9 @@
         z-index:2;
         width: 100%;
         height: 100%;
-        -webkit-perspective: 1200px;
-        -moz-perspective: 1200px;
-        perspective: 1200px;
+        /*-webkit-perspective: 1200px;*/
+        /*-moz-perspective: 1200px;*/
+        /*perspective: 1200px;*/
         background: #2a2a2a;
     }
 

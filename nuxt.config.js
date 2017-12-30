@@ -33,7 +33,7 @@ module.exports = {
   head:    {
     title: 'Fabrizio Meinero - Imfaber',
     meta: [
-      {hid: 'description', name: 'description', content: 'I am a web Front End Engineer, Back End Developer and UI/UX specialist. Check out my bloh and web portfolio.'},
+      {hid: 'description', name: 'description', content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'},
       {name: 'viewport', content: 'width=device-width, user-scalable=no'},
       {name: 'twitter:card', content: 'summary'},
       {name: 'MobileOptimized', content: 'width'},

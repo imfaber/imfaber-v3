@@ -5,12 +5,16 @@
 export const strict = true
 
 export const state = () => ({
-  menuMobileIsOpened: false
+  menuMobileIsOpened: false,
+  navBarColor: 'transparent'
 })
 
 export const mutations = {
   setMenuMobileIsOpened (state, value) {
     state.menuMobileIsOpened = value
+  },
+  navBarColor (state, value) {
+    state.navBarColor = value
   }
 }
 

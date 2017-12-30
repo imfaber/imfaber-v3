@@ -1,0 +1,16 @@
+.typed-text {
+  color: #1bc470;
+  font-family: NunitoBold, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.typed-cursor {
+  color: #1bc470;
+  animation: cursor .7s infinite;
+  font-family: NunitoBold, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+@keyframes cursor {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
