@@ -62,7 +62,7 @@ export const actions = {
       sort:    '-created',
       include: 'image,image.thumbnail,technology',
       fields:  {
-        works:  'title,technology,image,slug',
+        works:  'title,technology,image,slug,background_color',
         images: 'name,thumbnail',
         files:  'filename,url'
       },
@@ -93,7 +93,7 @@ export const actions = {
       sort:    '-created',
       include: 'image,image.thumbnail,technology',
       fields:  {
-        works:  'title,technology,image,slug',
+        works:  'title,technology,image,slug,background_color',
         images: 'name,thumbnail',
         files:  'filename,url'
       },

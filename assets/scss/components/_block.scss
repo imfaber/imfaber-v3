@@ -1,0 +1,32 @@
+.block {
+  @include padding(#{$gap / 2});
+  background: lighten($body-color, 7%);
+  border-radius: 10px;
+  @include tablet{
+    @include padding($gap);
+  }
+}
+
+.block--transparent {
+  background: transparent;
+}
+
+.block--heading {
+  margin-bottom: 0 !important;
+  border-radius: 10px 10px 0 0;
+  background: lighten($body-color, 15%);
+  .title{
+    color: $body-color;
+  }
+}
+
+.block--heading + .block{
+  margin-top: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.block--card {
+  padding: 0;
+  overflow: hidden;
+  margin-top: $gap;
+}

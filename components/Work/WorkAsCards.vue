@@ -21,9 +21,3 @@
     }
   }
 </script>
-
-<style scoped>
-    .columns .card {
-        height: 100%;
-    }
-</style>

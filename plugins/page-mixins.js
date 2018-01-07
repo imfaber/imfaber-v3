@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import $ from 'jquery'
+
 const PageMixins = {
   install(Vue, options) {
     Vue.mixin({
@@ -43,32 +45,68 @@ const PageMixins = {
        * @returns {*}
        */
       transition (to, from) {
-        console.log('from', from)
-        console.log('to', to)
+        // console.log('from', from)
+        // console.log('to', to)
 
-        const navRouteOrder = {
-          'index':    0,
-          'work':    1,
-          'about':    2,
-          'lab': 3,
-          'contact':  4
-        }
-
-        if (!from) return
-
-        if (from.name !== to.name) {
-          if (navRouteOrder[to.name] > navRouteOrder[from.name]) {
-            console.log('transition: page-forward')
-            return 'page-forward'
-          }
-          console.log('transition: page-backward')
-          return 'page-backward'
-        }
-        else {
-          console.log('transition: filter')
+        if (from && from.name === to.name) {
           return 'filter'
         }
+
+        let transition = {}
+        const delay     = 75
+        transition.name = 'blocks'
+        transition.css  = false
+
+        transition.beforeEnter = function (el) {
+          $('.block', el).each((i, elem) => {
+            $(elem).addClass(`block-in-setup`)
+          })
+        }
+
+        $.fn.reverse = [].reverse
+
+        transition.afterEnter = function (el, done) {
+          setTimeout(() => {
+            $('.block', el).reverse().each((i, elem) => {
+              setTimeout(() => $(elem).toggleClass(`block-in block-in-setup`), i * delay)
+            })
+            setTimeout(done, $('.block', el).length * delay - delay)
+          }, 10)
+        }
+
+        transition.leave = function (el, done) {
+          $('.block', el).reverse().each((i, elem) => {
+            setTimeout(() => $(elem).toggleClass(`block-out`), i * delay)
+          })
+          setTimeout(done, $('.block', el).length * delay + 500)
+        }
+
+        transition.afterLeave = function (el) {
+          $('.block', el).each((i, elem) => {
+            $(elem).toggleClass(`block-out`)
+          })
+        }
+
+        return transition
+      },
+
+      mounted(){
+        const $body = $('body')
+
+        if ($body.hasClass('loaded')) return
+        $(window).on('scroll', function () {
+          if ($(this).scrollTop() > 5) {
+            $body.addClass('scrolled')
+          }
+          else {
+            $body.removeClass('scrolled')
+          }
+        })
+
+        $body.addClass('loaded')
+
       }
+
     })
   }
 }

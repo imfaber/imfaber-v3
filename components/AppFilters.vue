@@ -1,7 +1,7 @@
 <template>
     <AppSection v-if="filters">
         <div v-for="filter in filters" class="control">
-            <div class="tags has-addons">
+            <div class="tags has-addons" :class="{'is-active': isActive(filter.machine_name)}">
                 <template v-if="isActive(filter.machine_name)">
                     <span class="tag" @click.prevent="remove(filter.machine_name)">{{filter.name}}</span>
                     <span class="tag is-delete" @click.prevent="remove(filter.machine_name)"></span>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="control" v-if="resetButton && filterParams.length">
-            <div class="tags has-addons">
+            <div class="tags has-addons is-active">
                 <span class="tag"
                       @click.prevent="reset()">
                     Reset

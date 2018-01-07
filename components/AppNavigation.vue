@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-transparent">
+    <nav class="navbar is-transparent is-fluid">
         <div class="navbar-brand">
             <nuxt-link to="/" class="navbar-item">
                 <AppLogo></AppLogo>
@@ -16,17 +16,20 @@
 
         <div id="app-menu" class="navbar-menu" :class="{'is-active': this.$store.state.menuMobileIsOpened}">
             <div class="navbar-start">
-                <nuxt-link to="/work" class="navbar-item">Work</nuxt-link>
+                <nuxt-link to="/work" class="navbar-item" exact>Work</nuxt-link>
                 <nuxt-link to="/lab" class="navbar-item">Lab</nuxt-link>
                 <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item social-icon" target="_blank" href="">
+                <a class="navbar-item social-icon" target="_blank" href="https://github.com/imfaber">
                     <span class="icon"><i class="fa fa-github"></i></span>
                 </a>
-                <a class="navbar-item social-icon" target="_blank" href="">
+                <a class="navbar-item social-icon" target="_blank" href="https://twitter.com/imfaber">
                     <span class="icon"><i class="fa fa-twitter"></i></span>
+                </a>
+                <a class="navbar-item social-icon" target="_blank" href="https://www.linkedin.com/pub/fabrizio-meinero/35/a57/782">
+                    <span class="icon"><i class="fa fa-linkedin"></i></span>
                 </a>
             </div>
         </div>

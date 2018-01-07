@@ -1,8 +1,6 @@
 <template>
     <AppSection class="page page--index">
-        <div class="container">
-            <Hello></Hello>
-        </div>
+        <Hello></Hello>
     </AppSection>
 </template>
 
@@ -14,9 +12,3 @@
     components: {AppSection, Hello},
   }
 </script>
-
-<style scoped lang="scss">
-    .page--index {
-        background: #2a2a2a;
-    }
-</style>

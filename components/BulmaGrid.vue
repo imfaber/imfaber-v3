@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="columns" v-for="(column, rowIndex) in columns" :key="rowIndex">
+    <div class="columns is-multiline" v-for="(column, rowIndex) in columns" :key="rowIndex">
       <div v-for="(item, index) in column" :key="index" :class="columnClasses">
         <slot :item="item"></slot>
       </div>
@@ -16,7 +16,23 @@ export default {
   },
   computed: {
     columnClasses () {
-      return 'column is-' + 12 / this.itemsByRow
+      let colClass = 'column'
+
+      switch (parseInt(this.itemsByRow)) {
+        case 1:
+          colClass += ' is-' + 12 / this.itemsByRow
+          break
+        case 2:
+          colClass += ' is-half-tablet'
+          break
+        case 3:
+          colClass += ' is-half-tablet is-one-third-desktop'
+          break
+        case 4:
+          colClass += ' is-half-tablet is-one-third-desktop is-one-quarter-fullhd'
+          break
+      }
+      return colClass
     },
     columns () {
       let columnIndex = 0

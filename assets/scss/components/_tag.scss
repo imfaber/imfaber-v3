@@ -1,0 +1,28 @@
+.tags {
+
+  .tag {
+    background: $body-color;
+    color: $grey-lighter;
+    transition: all .4s ease;
+    //border: 1px solid $body-color;
+  }
+
+  &.is-active .tag {
+    background: $magenta;
+    border-color: $magenta;
+  }
+
+  &:hover .tag {
+    background: $magenta;
+    border-color: $magenta;
+  }
+
+  .tag.is-delete {
+    background:shade($magenta, 30%);
+    border-left: 0;
+  }
+
+  &:hover .tag.is-delete {
+    background: $magenta;
+  }
+}

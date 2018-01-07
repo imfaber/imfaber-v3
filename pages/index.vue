@@ -1,5 +1,5 @@
 <template>
-  <PageIndex v-bind="{latestRecipes, latestPromoted}" />
+  <PageIndex />
 </template>
 
 <script>
@@ -9,14 +9,7 @@ import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/lib
 export default {
   components: { PageIndex },
   async asyncData ({ params }) {
-    return Promise.all([
-      findAllLatestRecipes(4),
-      findHomePromotedArticlesAndRecipes(3)]).then(values => {
-        return {
-          latestRecipes: values[0],
-          latestPromoted: values[1],
-        }
-      })
+
   }
 }
 </script>

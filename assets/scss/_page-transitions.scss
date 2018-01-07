@@ -1,21 +1,21 @@
-// Page navigation frontward
-.page-forward-leave-to {
-  @extend .pt-page-scaleDownUp;
-}
+.block{
+  transition: opacity ease-out .6s, $ease-bounce-down .6s;
 
-.page-forward-enter-active {
-  @extend .pt-page-scaleUp;
-  animation-delay: .3s;
-}
+  &.block-in-setup {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
 
-// Page navigation backward
-.page-backward-leave-to {
-  @extend .pt-page-scaleDown;
-}
+  &.block-in {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
-.page-backward-enter-active {
-  @extend .pt-page-scaleUpDown;
-  animation-delay: .3s;
+  &.block-out {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: opacity $ease-bounce-up .4s, $ease-bounce-up .6s;
+  }
 }
 
 // Filters
@@ -24,10 +24,8 @@
 }
 
 .filter-enter-active {
-  @extend .pt-page-moveFromTop;
+  @extend .pt-page-scaleUp;
 }
-
-
 /* animation sets */
 
 /* move from / to  */

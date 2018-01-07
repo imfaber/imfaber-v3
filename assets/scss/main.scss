@@ -6,15 +6,27 @@
 @import "../../node_modules/bulma/bulma";
 @import "../../node_modules/font-awesome/scss/font-awesome";
 
+// Mixins
+@import "mixins";
+
 // Page transitions
 @import "page-transitions";
 
 // Base
+@import "base/body";
 @import "base/typography";
 @import "base/img";
 
+// Layouts
+@import "layouts/default";
+
 // Components
-@import "components/page";
 @import "components/container";
 @import "components/nav";
+@import "components/block";
 @import "components/typed";
+@import "components/tag";
+@import "components/card";
+@import "components/page/page";
+@import "components/page/index";
+@import "components/page/work";

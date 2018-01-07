@@ -1,6 +1,9 @@
-.page > .container {
-  padding: $space-xxl $space-l;
-  min-height: 100vh;
-  position: relative;
-  z-index: 2;
+.container.is-fluid {
+  max-width: $fullhd !important;
+  @include margin(null auto);
+  @include padding(0 #{$gap / 2});
+
+  @include tablet{
+    @include padding(null $gap);
+  }
 }

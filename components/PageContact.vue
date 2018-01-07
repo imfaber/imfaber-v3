@@ -24,5 +24,8 @@ export default {
 <style scoped lang="scss">
   .page--contact {
     background: #60d7a9;
+    &:before {
+      background: #60d7a9;
+    }
   }
 </style>
