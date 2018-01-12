@@ -58,6 +58,9 @@ export const actions = {
   },
 
   async findAllByTechAndSkills ({commit}, termMachineName, limit = 4, offset = 0) {
+    let technologyValuses = {};
+    for (let i = 0; i < termMachineName.length; ++i) technologyValuses[i] = termMachineName[i]
+
     const query = {
       sort:    '-created',
       include: 'image,image.thumbnail,technology',
@@ -74,7 +77,8 @@ export const actions = {
         technology: {
           condition: {
             path: 'technology.machine_name',
-            value: termMachineName
+            value: technologyValuses,
+            operator: 'IN'
           }
         }
       },

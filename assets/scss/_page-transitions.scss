@@ -16,6 +16,38 @@
     transform: translateY(200px);
     transition: opacity $ease-bounce-up .4s, $ease-bounce-up .6s;
   }
+
+  &.translate-block-in-setup {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  &.translate-block-in {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  &.translate-block-out {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: opacity $ease-bounce-up .4s, $ease-bounce-up .6s;
+  }
+
+  &.scale-block-in-setup {
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  &.scale-block-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &.scale-block-out {
+    opacity: 0;
+    transform: scale(.5);
+    transition: opacity $ease-bounce-up .4s, $ease-bounce-up .6s;
+  }
 }
 
 // Filters

@@ -38,11 +38,11 @@
         if (!this.$route.query.filter) {
           this.$route.query.filter = [];
         }
-        let filterParams = this.$route.query.filter.slice()
-        if (filterParams && !Array.isArray(filterParams)) {
-          filterParams = [filterParams]
+        let filters = this.$route.query.filter.slice()
+        if (filters && !Array.isArray(filters)) {
+          filters = [filters]
         }
-        return filterParams
+        return filters
       }
     },
 

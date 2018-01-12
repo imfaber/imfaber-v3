@@ -2,6 +2,7 @@
     <div class="hello">
 
         <div>
+            <div class="block block--transparent"><span class="emoticon">👋</span></div>
             <h1 class="block block--transparent">Hello, my name is Fabrizio Meinero.</h1>
             <div class="block block--transparent">
                 <p>I'm a Full Stack Web Developer and I love to build</p>

@@ -1,10 +1,13 @@
 <template>
-    <div class="recipes">
+    <div class="works">
         <BulmaGrid :items="works" :itemsByRow="cardsByRow">
             <template scope="props">
                 <WorkAsCard :work="props.item"></WorkAsCard>
             </template>
         </BulmaGrid>
+        <div v-if="!works.length" class="block block--card block--no-results">
+            <p><span class="emoticon">😢</span><br/>No results found!</p>
+        </div>
     </div>
 </template>
 

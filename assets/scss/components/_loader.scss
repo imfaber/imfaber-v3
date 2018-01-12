@@ -1,0 +1,18 @@
+.nuxt-progress {
+  max-width: calc(100% - #{$gap});
+  left: #{$gap/2} !important;
+  right: #{$gap/2} !important;
+
+  @include tablet {
+    max-width: calc(100% - #{$gap*2});
+    left: #{$gap} !important;
+    right: #{$gap} !important;
+  }
+
+  @include fullhd {
+    max-width: $fullhd - (2 * $gap);
+    margin-left: -($fullhd - (2 * $gap)) / 2;
+    left: 50% !important;
+    right: auto !important;
+  }
+}

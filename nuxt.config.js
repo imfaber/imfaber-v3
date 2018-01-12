@@ -10,7 +10,11 @@ module.exports = {
   router:  {
     // check API server is up, to avoid ugly errors pages
     // when its down or when there is no internet connection
-    middleware: 'server-api-available'
+    middleware: 'server-api-available',
+
+    scrollBehavior (to, from, savedPosition) {
+      return {}
+    }
   },
   /*
    ** Build configuration
@@ -49,8 +53,8 @@ module.exports = {
    ** Customize the progress-bar color
    */
   loading: {
-    color: 'rgba(255, 255, 255, .7)',
-    height: '5px'
+    color: '#00ff6a',
+    height: '2px'
   },
 
   /*

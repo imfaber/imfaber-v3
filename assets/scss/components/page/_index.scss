@@ -11,10 +11,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 300px);
 
   .block {
     padding: $space-s !important;
+    margin-bottom: 0;
+  }
+
+  .emoticon {
+    font-size: 3.5em;
+    //transform: rotate(15deg);
+    //animation: wave .8s ease infinite;
+    display: block;
+    margin: auto;
+    transform-origin: bottom right;
+    @include size(80px);
   }
 
   h1 {
@@ -28,7 +39,7 @@
     font-size: 1.2rem;
   }
 
-  @include tablet{
+  @include tablet {
     h1 {
       font-size: 2rem;
     }
@@ -37,5 +48,13 @@
     }
   }
 
+  @keyframes wave {
+    50% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(15deg);
+    }
+  }
 
 }

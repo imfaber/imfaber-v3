@@ -30,3 +30,17 @@
   overflow: hidden;
   margin-top: $gap;
 }
+
+.block--no-results {
+  padding: $space-m;
+  text-align: center;
+  font-size: 1.3rem;
+  color: lighten($body-color, 20%);
+  .emoticon {
+    font-size: 3.5rem;
+  }
+}
+
+.block--emoticon {
+  font-size: 3.5rem;
+}

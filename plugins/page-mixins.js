@@ -48,42 +48,50 @@ const PageMixins = {
         // console.log('from', from)
         // console.log('to', to)
 
-        if (from && from.name === to.name) {
-          return 'filter'
-        }
-
+        $.fn.reverse    = [].reverse
         let transition = {}
-        const delay     = 75
+        let delay     = 75
+        let blockClass  = '.block'
+        let animation   = 'translate'
         transition.name = 'blocks'
         transition.css  = false
 
+        if (from && from.name === to.name) {
+          blockClass = '.block--card'
+          animation  = 'scale'
+          delay      = 75
+          $('html,body').animate({scrollTop: 0}, 500)
+        }
+
         transition.beforeEnter = function (el) {
-          $('.block', el).each((i, elem) => {
-            $(elem).addClass(`block-in-setup`)
+          $(blockClass, el).each((i, elem) => {
+            $(elem).addClass(`${animation}-block-in-setup`)
           })
         }
 
-        $.fn.reverse = [].reverse
-
         transition.afterEnter = function (el, done) {
           setTimeout(() => {
-            $('.block', el).reverse().each((i, elem) => {
-              setTimeout(() => $(elem).toggleClass(`block-in block-in-setup`), i * delay)
+            $(blockClass, el).reverse().each((i, elem) => {
+              setTimeout(() => {
+                $(elem)
+                  .toggleClass(`${animation}-block-in ${animation}-block-in-setup`)
+                  .removeClass(`translate-block-in scale-block-in`)
+              }, i * delay)
             })
-            setTimeout(done, $('.block', el).length * delay - delay)
+            setTimeout(done, $(blockClass, el).length * delay - delay)
           }, 10)
         }
 
         transition.leave = function (el, done) {
-          $('.block', el).reverse().each((i, elem) => {
-            setTimeout(() => $(elem).toggleClass(`block-out`), i * delay)
+          $(blockClass, el).reverse().each((i, elem) => {
+            setTimeout(() => $(elem).toggleClass(`${animation}-block-out`), i * delay)
           })
-          setTimeout(done, $('.block', el).length * delay + 500)
+          setTimeout(done, $(blockClass, el).length * delay + 500)
         }
 
         transition.afterLeave = function (el) {
-          $('.block', el).each((i, elem) => {
-            $(elem).toggleClass(`block-out`)
+          $(blockClass, el).each((i, elem) => {
+            $(elem).toggleClass(`${animation}-block-out`)
           })
         }
 
