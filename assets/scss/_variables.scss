@@ -12,9 +12,13 @@ $space-xl: 40px;
 $space-xxl: 60px;
 $gap: $space-l;
 
+// Control
+$control-radius: 10px;
+
 
 $title-color: rgba(0,0,0,0.1);
 $body-color: #2f2f2f;
+$text-light: rgba(255, 255, 255, .4);
 
 $magenta: #ff3860;
 $green: #00ff6a;
@@ -25,3 +29,5 @@ $fa-font-path: "../../node_modules/font-awesome/fonts";
 // Easing
 $ease-bounce-down: cubic-bezier(0.175, 0.885, 0.32, 1.300);
 $ease-bounce-up: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+

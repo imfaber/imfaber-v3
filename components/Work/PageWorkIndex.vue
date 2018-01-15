@@ -1,9 +1,9 @@
 <template>
     <AppSection v-if="works" class="page page--work-index">
-        <div class="block block--heading">
-            <h3 class="title is-h3 has-text-centered">Work</h3>
+        <div class="block block--filters">
+            <h1 class="block__header title is-h3 has-text-centered">Work</h1>
+            <AppFilters class="field is-grouped is-grouped-multiline block__body" :filters="filters" :reset-button="true"></AppFilters>
         </div>
-        <AppFilters class="field is-grouped is-grouped-multiline block block--filters" :filters="filters" :reset-button="true"></AppFilters>
         <WorkAsCards :works="works"></WorkAsCards>
     </AppSection>
 </template>

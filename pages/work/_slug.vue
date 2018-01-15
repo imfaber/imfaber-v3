@@ -9,7 +9,7 @@ import striptags from 'striptags'
 export default {
   components: { PageWorkSlug },
   async asyncData ({ store, params }) {
-    const work = await store.dispatch('works/findOneBySlug', params.slug);
+    const work = await store.dispatch('work/findOneBySlug', params.slug);
     const meta = {
       title: work.title,
       description: striptags(work.body.summary || work.body.value).trim(),

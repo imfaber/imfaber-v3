@@ -1,9 +1,54 @@
 .block {
-  @include padding(#{$gap / 2});
   background: lighten($body-color, 7%);
   border-radius: 10px;
-  @include tablet{
-    @include padding($gap);
+  overflow: hidden;
+
+  .block__header {
+    margin-bottom: 0 !important;
+    background: lighten($body-color, 15%);
+    @include responsive-padding;
+
+    &.title,
+    .title{
+      color: $body-color;
+    }
+
+    .title.is-h1 {
+      font-size: 1.5rem;
+      @include tablet{
+        font-size: 2rem;
+      }
+    }
+
+    .title.is-h3 {
+      font-size: 1.2rem;
+      margin: 0;
+      @include tablet{
+        font-size: 1.5rem;
+      }
+    }
+
+    .subtitle {
+      display: none;
+      color: lighten($body-color, 3%);
+      font-size: 1rem;
+      margin-top: 0;
+
+      @include tablet{
+        display: block;
+      }
+    }
+  }
+
+  .block__body {
+    @include responsive-padding;
+    *{
+      color: $text-light;
+    }
+  }
+
+  .block__footer {
+    @include responsive-padding;
   }
 }
 
@@ -11,19 +56,6 @@
   background: transparent;
 }
 
-.block--heading {
-  margin-bottom: 0 !important;
-  border-radius: 10px 10px 0 0;
-  background: lighten($body-color, 15%);
-  .title{
-    color: $body-color;
-  }
-}
-
-.block--heading + .block{
-  margin-top: 0;
-  border-radius: 0 0 10px 10px;
-}
 
 .block--card {
   padding: 0;
@@ -43,4 +75,20 @@
 
 .block--emoticon {
   font-size: 3.5rem;
+}
+
+.pager,
+.block--pager {
+  padding: 0;
+  overflow: hidden;
+  .button {
+    transition: all .4s ease;
+    background-color: transparent;
+    color: lighten($body-color, 30%);
+
+    &:hover {
+      background: $body-color;
+      color: darken($white, 10%);
+    }
+  }
 }

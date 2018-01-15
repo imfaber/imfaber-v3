@@ -1,0 +1,6 @@
+@mixin responsive-padding () {
+  @include padding(#{$gap / 2});
+  @include tablet{
+    @include padding($gap);
+  }
+}

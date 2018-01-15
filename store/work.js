@@ -33,10 +33,11 @@ export const actions = {
 
   async findOneBySlug ({commit}, slug) {
     const query = {
-      include: 'image,image.thumbnail,image.imageFile,role,workplace,technology',
-      page:    {
-        limit: 1
-      },
+      sort:    '-year',
+      include: 'image,image.thumbnail,image_gallery,image_gallery.imageFile,role,workplace,technology',
+      // page:    {
+      //   limit: 1
+      // },
       filter:  {
         slug:   {
           path:  'slug',
@@ -62,7 +63,7 @@ export const actions = {
     for (let i = 0; i < termMachineName.length; ++i) technologyValuses[i] = termMachineName[i]
 
     const query = {
-      sort:    '-created',
+      sort:    '-year',
       include: 'image,image.thumbnail,technology',
       fields:  {
         works:  'title,technology,image,slug,background_color',
@@ -94,7 +95,7 @@ export const actions = {
 
   async findAll ({commit}, limit = 4, offset = 0) {
     const query = {
-      sort:    '-created',
+      sort:    '-year',
       include: 'image,image.thumbnail,technology',
       fields:  {
         works:  'title,technology,image,slug,background_color',
