@@ -1,5 +1,11 @@
 module.exports = {
-  plugins: ['~plugins/vue-lazyload', '~plugins/app', '~/plugins/page-mixins'],
+  plugins: [
+    '~plugins/app',
+    '~plugins/vue-lazyload',
+    '~plugins/vue-awesome-swiper',
+    { src: '~plugins/vue-particles', ssr: false },
+    '~plugins/page-mixins'
+  ],
   env:     {
     // your JSON API server URL :
     baseUrl:       process.env.BASE_URL || 'http://localhost:3000',
