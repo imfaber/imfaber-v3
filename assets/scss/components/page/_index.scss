@@ -15,6 +15,7 @@
     font-size: 3.5em;
     //transform: rotate(15deg);
     //animation: wave .8s ease infinite;
+    animation: shake .6s infinite linear both;
     display: block;
     margin: auto;
     transform-origin: bottom right;
@@ -51,4 +52,17 @@
     }
   }
 
+  @keyframes shake {
+    from, to {
+      transform: rotate(-15deg);
+    }
+
+    50% {
+      transform: rotate(15deg);
+    }
+  }
+
+
 }
+
+

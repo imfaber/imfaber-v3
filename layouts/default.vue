@@ -13,7 +13,7 @@
           color="#393939"
           :particleOpacity="0.7"
           linesColor="#505050"
-          :particlesNumber="50"
+          :particlesNumber="80"
           shapeType="circle"
           :particleSize="10"
           :linesWidth="2"
