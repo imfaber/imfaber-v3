@@ -1,3 +1,14 @@
 body {
   background: $body-color;
 }
+
+/* Make selected text gold on a red background */
+::-moz-selection {
+  color: gold;
+  background: red;
+}
+
+::selection {
+  color: $grey;
+  background: $green;
+}

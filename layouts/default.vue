@@ -9,23 +9,23 @@
                 <nuxt/>
             </div>
         </div>
-        <vue-particles
-          color="#393939"
-          :particleOpacity="0.7"
-          linesColor="#505050"
-          :particlesNumber="80"
-          shapeType="circle"
-          :particleSize="10"
-          :linesWidth="2"
-          :lineLinked="true"
-          :lineOpacity="0.4"
-          :linesDistance="150"
-          :moveSpeed="1"
-          :hoverEffect="true"
-          hoverMode="repulse"
-          :clickEffect="true"
-          clickMode="push"
-        />
+        <!--<vue-particles-->
+          <!--color="#393939"-->
+          <!--:particleOpacity="0.8"-->
+          <!--linesColor="#717171"-->
+          <!--:particlesNumber="80"-->
+          <!--shapeType="circle"-->
+          <!--:particleSize="10"-->
+          <!--:linesWidth="1"-->
+          <!--:lineLinked="true"-->
+          <!--:lineOpacity=".2"-->
+          <!--:linesDistance="150"-->
+          <!--:moveSpeed="1"-->
+          <!--:hoverEffect="false"-->
+          <!--hoverMode="repulse"-->
+          <!--:clickEffect="false"-->
+          <!--clickMode="none"-->
+        <!--/>-->
     </div>
 </template>
 

@@ -38,11 +38,21 @@
 
   .navbar-item {
     color: rgba(255, 255, 255, 0.6);
-    transition: color .4s ease;
+    transition: all .4s ease;
     padding: $space-s $space-m;
     font-family: NunitoBold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     text-align: center;
+    @include position();
+
+    &:after {
+      content: '';
+      @include position(absolute, null null 0 50%);
+      @include size(0 2px);
+      background: $green;
+      opacity: 0;
+      transition: all .4s ease;
+    }
 
     &:hover, &:focus, &.nuxt-link-exact-active {
       color: rgba(255, 255, 255, 1);
@@ -61,6 +71,18 @@
 
     @include desktop{
       font-size: 1rem;
+    }
+
+    &.is-active {
+      color: $green;
+      background: none;
+      @include desktop{
+        &:after {
+          opacity: 1;
+          width: 100%;
+          left: 0;
+        }
+      };
     }
   }
 }

@@ -1,0 +1,14 @@
+.codify {
+  @include position();
+  &:before,
+  &:after {
+    opacity: .4;
+  }
+
+  &:before{
+    content: '< ';
+  }
+  &:after {
+    content: ' />';
+  }
+}

@@ -45,6 +45,13 @@
     *{
       color: $text-light;
     }
+
+    a {
+      transition: all .4s ease;
+      &:hover {
+        color: $white;
+      }
+    }
   }
 
   .block__footer {
@@ -81,14 +88,5 @@
 .block--pager {
   padding: 0;
   overflow: hidden;
-  .button {
-    transition: all .4s ease;
-    background-color: transparent;
-    color: lighten($body-color, 30%);
-
-    &:hover {
-      background: $body-color;
-      color: darken($white, 10%);
-    }
-  }
+  border-radius: 8px;
 }

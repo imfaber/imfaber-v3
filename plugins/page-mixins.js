@@ -56,7 +56,7 @@ const PageMixins = {
         transition.name = 'blocks'
         transition.css  = false
 
-        if (from && from.name === to.name) {
+        if (from && from.path === to.path) {
           blockClass = '.block--card'
           animation  = 'scale'
           delay      = 75

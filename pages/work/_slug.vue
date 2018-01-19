@@ -9,6 +9,13 @@ import striptags from 'striptags'
 export default {
   components: { PageWorkSlug },
   async asyncData ({ store, params }) {
+
+    // If work list is not in store yet put it for work navigation.
+    if (!store.getters['work/list']) {
+      await store.dispatch('work/findAll');
+    }
+
+    // Retrieve current work.
     const work = await store.dispatch('work/findOneBySlug', params.slug);
     const meta = {
       title: work.title,

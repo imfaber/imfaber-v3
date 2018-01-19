@@ -8,21 +8,24 @@
   }
 
   &.is-active .tag {
-    background: $magenta;
-    border-color: $magenta;
+    background: $green;
+    border-color: $green;
+    color: $black;
   }
 
   &:hover .tag {
-    background: $magenta;
-    border-color: $magenta;
+    background: $green;
+    border-color: $green;
+    color: $black;
   }
 
   .tag.is-delete {
-    background:shade($magenta, 30%);
+    background:shade($green, 30%);
     border-left: 0;
+    color: $black;
   }
 
   &:hover .tag.is-delete {
-    background: $magenta;
+    background: $green;
   }
 }

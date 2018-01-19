@@ -1,10 +1,13 @@
 <template>
     <AppSection v-if="filters">
         <div v-for="filter in filters" class="control">
-            <div class="tags has-addons" :class="{'is-active': isActive(filter.machine_name)}">
+            <div class="tags has-addons"
+                 :class="{'is-active': isActive(filter.machine_name)}">
                 <template v-if="isActive(filter.machine_name)">
-                    <span class="tag" @click.prevent="remove(filter.machine_name)">{{filter.name}}</span>
-                    <span class="tag is-delete" @click.prevent="remove(filter.machine_name)"></span>
+                    <span class="tag"
+                          @click.prevent="remove(filter.machine_name)">{{filter.name}}</span>
+                    <span class="tag is-delete"
+                          @click.prevent="remove(filter.machine_name)"></span>
                 </template>
                 <template v-else>
                     <span class="tag" @click.prevent="add(filter.machine_name)">{{filter.name}}</span>
@@ -29,6 +32,7 @@
   export default {
     components: {AppSection},
     props:      {
+      path:        {type: String, default: '/work'},
       filters:     {type: Array, default: () => {}},
       resetButton: {type: Boolean, default: false},
     },
@@ -67,7 +71,7 @@
       updateQuery(){
         let query    = Object.assign({}, this.$route.query)
         query.filter = this.filterParams;
-        this.$router.replace({query: query});
+        this.$router.push({path: '/work', query: query});
       }
     },
   }

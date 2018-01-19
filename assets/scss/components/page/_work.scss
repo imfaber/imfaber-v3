@@ -3,13 +3,44 @@
   header.work__header {
     @include position();
 
+    * {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    h1 {
+      a {
+        transition: all .4s ease;
+
+        .fa {
+          font-size: 1rem;
+        }
+      }
+      a:hover {
+        color: $white;
+      }
+    }
+
     .pager,
     .block--pager {
+      overflow: visible;
       display: none;
       @include tablet{
         display: block;
       }
       @include position(absolute, $gap $gap null null);
+
+      .button {
+        transition: all .4s ease;
+        background-color: transparent;
+        color: lighten($body-color, 30%);
+        border-radius: 5px;
+
+        &:focus,
+        &:hover {
+          background: $body-color;
+          color: darken($white, 10%);
+        }
+      }
     }
 
     .block--links {
@@ -77,5 +108,9 @@
         border-color: lighten($body-color, 7%);
       }
     }
+  }
+  
+  .column:last-child {
+    padding-bottom: 0;
   }
 }

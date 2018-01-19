@@ -59,8 +59,11 @@ export const actions = {
   },
 
   async findAllByTechAndSkills ({commit}, termMachineName, limit = 4, offset = 0) {
+    termMachineName = (typeof termMachineName === 'string') ? [termMachineName] : termMachineName
     let technologyValuses = {};
     for (let i = 0; i < termMachineName.length; ++i) technologyValuses[i] = termMachineName[i]
+
+    console.log(technologyValuses);
 
     const query = {
       sort:    '-year',
@@ -113,8 +116,9 @@ export const actions = {
         limit: limit
       }
     }
-
-    return await jsonApi.get('works', query)
+    const list = await jsonApi.get('works', query)
+    commit('list', list)
+    return list
   },
 
 }

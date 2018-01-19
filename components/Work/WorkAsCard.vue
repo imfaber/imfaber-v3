@@ -13,6 +13,13 @@
                 </template>
                 <div slot="content" class="has-text-centered">
                     <div class="description">
+                        <style>
+                            .work--{{work.slug.value}} .tags.is-active .tag,
+                            .work--{{work.slug.value}} .tags:hover .tag {
+                                background: {{ work.background_color.color}};
+                                color: white;
+                            }
+                        </style>
                         <AppFilters class="field is-grouped is-grouped-multiline"
                                     :filters="work.technology" :reset-button="false"></AppFilters>
                     </div>
