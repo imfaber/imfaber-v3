@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar is-transparent is-fluid">
         <div class="navbar-brand">
-            <nuxt-link to="/" class="navbar-item">
+            <nuxt-link to="/" class="navbar-item home-link" :class="{'is-active': isActiveItem('')}">
                 <!--<AppLogo></AppLogo>-->
                 <span class="codify">Imfaber</span>
             </nuxt-link>

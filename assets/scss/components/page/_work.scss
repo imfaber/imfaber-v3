@@ -35,6 +35,10 @@
         color: lighten($body-color, 30%);
         border-radius: 5px;
 
+        &.is-loading i {
+          visibility: hidden;
+        }
+
         &:focus,
         &:hover {
           background: $body-color;
@@ -78,7 +82,12 @@
   .swiper-pagination {
     @include position(absolute, 0 0 auto 0);
     height: 30px;
+    opacity: 0;
+    transition: all .4s ease .4s;
 
+    &.swiper-pagination-clickable{
+      opacity: 1;
+    }
     .swiper-pagination-bullet{
       @include size(10px);
       @include position(relative, 2px null null);
@@ -91,26 +100,47 @@
       overflow: hidden;
       border-radius: 10px;
       @include position();
-      padding-top: 30px;
       display: inline-block;
-      margin: 0;
-      &:before {
-        content: '';
-        @include position(absolute, 0 0 null 0);
-        height: 30px;
-        background: lighten($body-color, 7%);
-      }
-      &:after {
-        content: '';
-        @include position(absolute, 0);
-        border-width: 0px 10px 30px;
+      min-width: 100px;
+      min-height: 150px;
+
+      img {
+        max-width: calc(100% - 10px);
+        //padding-top: 30px;
+        border-width: 30px 5px;
         border-style: solid;
         border-color: lighten($body-color, 7%);
+        margin: 0;
+        display: block;
+        transition: all .4s ease;
+        opacity: 0;
+      }
+
+      img[lazy=loaded] {
+        opacity: 1;
       }
     }
   }
-  
+
+  .swiper-slide:first-child {
+    .frame:before {
+      @include loader;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      width: 30px;
+      height: 30px;
+      border-width: 2px;
+      opacity: .4;
+    }
+  }
+
+
   .column:last-child {
     padding-bottom: 0;
+  }
+
+  .tabs li {
+    width: 70px;
   }
 }

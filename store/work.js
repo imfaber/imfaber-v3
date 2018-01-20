@@ -34,7 +34,7 @@ export const actions = {
   async findOneBySlug ({commit}, slug) {
     const query = {
       sort:    '-year',
-      include: 'image,image.thumbnail,image_gallery,image_gallery.imageFile,role,workplace,technology',
+      include: 'image,image.thumbnail,desktop_gallery,desktop_gallery.imageFile,tablet_gallery,tablet_gallery.imageFile,mobile_gallery,mobile_gallery.imageFile,role,workplace,technology',
       // page:    {
       //   limit: 1
       // },

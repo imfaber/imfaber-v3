@@ -18,32 +18,49 @@
                 </div>
 
                 <div class="block--pager has-addons">
+
+
                     <nuxt-link
                       v-if="prevWork"
                       :to="{path: '/work/' + prevWork.slug.value}"
-                      class="button is-dark hint--top hint--rounded hint--bounce"
+                      class="hint--top hint--top hint--rounded hint--bounce"
                       :aria-label="prevWork.title"
                     >
-                        <i class="fa fa-arrow-left"
-                           aria-hidden="true"></i>
+                        <span class="button is-dark"
+                              :class="{'is-loading': prevLoading}"
+                              @click="prevLoading = true"
+                        >
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </span>
                     </nuxt-link>
+
 
                     <nuxt-link
                       to="/work"
-                      class="button is-dark hint--top hint--rounded hint--bounce"
+                      class="hint--top hint--rounded hint--bounce"
                       aria-label="See full list"
                     >
-                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                        <span class="button is-dark"
+                              :class="{'is-loading': listLoading}"
+                              @click="listLoading = true"
+                        >
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                        </span>
                     </nuxt-link>
 
                     <nuxt-link
                       v-if="nextWork"
                       :to="{path: '/work/' + nextWork.slug.value}"
-                      class="button is-dark hint--top hint--rounded hint--bounce"
+                      class="hint--top hint--rounded hint--bounce"
                       :aria-label="nextWork.title"
                     >
-                        <i class="fa fa-arrow-right"
-                           aria-hidden="true"></i>
+                        <span class="button is-dark"
+                              :class="{'is-loading': nextLoading}"
+                              @click="nextLoading = true"
+                        >
+                            <i class="fa fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </span>
                     </nuxt-link>
                 </div>
             </header>
@@ -107,24 +124,78 @@
                                 background: {{ work.background_color.color}};
                                 color: white;
                             }
+                            .tabs li.is-active a{
+                                border-bottom-color: {{ work.background_color.color}};
+                                color: {{ work.background_color.color}};
+                            }
                         </style>
-                        <div v-swiper:mySwiper="swiperOption">
-                            <template v-if="banners.length>1">
+
+                        <div class="tabs is-toggle-rounded is-centered is-large" v-if="banners.desktop.length || banners.tablet.length || banners.mobile.length">
+                            <ul>
+                                <li :class="{'is-active': (activeTab == 'desktop')}" v-if="banners.desktop.length">
+                                    <a @click.stop.prevent="setActiveTab('desktop')">
+                                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li :class="{'is-active': (activeTab == 'tablet')}" v-if="banners.tablet.length">
+                                    <a @click.stop.prevent="setActiveTab('tablet')">
+                                        <i class="fa fa-tablet" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li :class="{'is-active': (activeTab == 'mobile')}" v-if="banners.mobile.length">
+                                    <a @click.stop.prevent="setActiveTab('mobile')">
+                                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div v-swiper:mySwiper="swiperOption" v-if="activeTab=='desktop'">
+                            <template v-if="banners.desktop.length>1">
                                 <div class="swiper-pagination"
                                      slot="pagination"></div>
-                                <!--<div class="swiper-button-prev" slot="button-prev"></div>-->
-                                <!--<div class="swiper-button-next" slot="button-next"></div>-->
                             </template>
                             <div class="swiper-wrapper">
                                 <div
                                   class="swiper-slide has-text-centered work-gallery"
-                                  v-for="banner in banners">
+                                  v-for="banner in banners.desktop">
                                     <span class="frame">
                                         <img v-lazy="banner">
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <div v-swiper:mySwiper="swiperOption" v-if="activeTab=='tablet'">
+                            <template v-if="banners.tablet.length>1">
+                                <div class="swiper-pagination"
+                                     slot="pagination"></div>
+                            </template>
+                            <div class="swiper-wrapper">
+                                <div
+                                  class="swiper-slide has-text-centered work-gallery"
+                                  v-for="banner in banners.tablet">
+                                    <span class="frame">
+                                        <img v-lazy="banner">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-swiper:mySwiper="swiperOption" v-if="activeTab=='mobile'">
+                            <template v-if="banners.mobile.length>1">
+                                <div class="swiper-pagination"
+                                     slot="pagination"></div>
+                            </template>
+                            <div class="swiper-wrapper">
+                                <div
+                                  class="swiper-slide has-text-centered work-gallery"
+                                  v-for="banner in banners.mobile">
+                                    <span class="frame">
+                                        <img v-lazy="banner">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
                     </section>
                 </div>
             </div>
@@ -159,6 +230,9 @@
             clickable: true
           }
         },
+        prevLoading: false,
+        listLoading: false,
+        nextLoading: false,
         stikyKitOptions: {
           parent:     '.columns',
           offset_top: 70
@@ -168,6 +242,7 @@
         },
         nextWork: null,
         prevWork: null,
+        activeTab: 'desktop'
       }
     },
 
@@ -178,9 +253,19 @@
       }),
 
       banners(){
-        let banners = [];
-        this.work.image_gallery.forEach((item) => {
-          banners.push(item.imageFile.url)
+        let banners = {
+          desktop: [],
+          tablet: [],
+          mobile: [],
+        }
+        this.work.desktop_gallery.forEach((item) => {
+          banners.desktop.push(item.imageFile.url)
+        })
+        this.work.tablet_gallery.forEach((item) => {
+          banners.tablet.push(item.imageFile.url)
+        })
+        this.work.mobile_gallery.forEach((item) => {
+          banners.mobile.push(item.imageFile.url)
         })
         return banners
       },
@@ -204,6 +289,14 @@
             return true
           }
         })
+      },
+
+      setActiveTab (tab) {
+        this.activeTab = tab
+        setTimeout(() => {
+          this.mySwiper.init();
+          this.mySwiper.slideTo(0, 0);
+        }, 1)
       }
     },
 
@@ -214,6 +307,7 @@
     },
 
     mounted () {
+//      console.log(this.work);
       this.processWorkNavigation()
       this.$Lazyload.$on('loaded', (data, formCache) => {
         if (this.mySwiper) {

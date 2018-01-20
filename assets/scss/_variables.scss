@@ -23,6 +23,11 @@ $text-light: rgba(255, 255, 255, .4);
 $magenta: #ff3860;
 $green: #00ff6a;
 
+// Tabs
+$tabs-border-bottom-color: lighten($body-color, 7%);
+$tabs-link-hover-border-bottom-color: $text-light;
+$tabs-link-hover-color: $text-light;
+
 
 $fa-font-path: "../../node_modules/font-awesome/fonts";
 
