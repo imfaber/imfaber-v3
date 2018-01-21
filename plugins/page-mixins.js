@@ -50,7 +50,7 @@ const PageMixins = {
 
         $.fn.reverse    = [].reverse
         let transition = {}
-        let delay     = 75
+        let delay     = 100
         let blockClass  = '.block'
         let animation   = 'translate'
         transition.name = 'blocks'
@@ -64,21 +64,24 @@ const PageMixins = {
         }
 
         transition.beforeEnter = function (el) {
-          $(blockClass, el).each((i, elem) => {
+          const $blocks = $(blockClass, el).slice(0, 10)
+          $blocks.each((i, elem) => {
             $(elem).addClass(`${animation}-block-in-setup`)
           })
         }
 
         transition.afterEnter = function (el, done) {
+          $('html,body').animate({scrollTop: 0}, 0)
           setTimeout(() => {
-            $(blockClass, el).reverse().each((i, elem) => {
+            const $blocks = $(blockClass, el).slice(0, 10)
+            $blocks.reverse().each((i, elem) => {
               setTimeout(() => {
                 $(elem)
                   .toggleClass(`${animation}-block-in ${animation}-block-in-setup`)
                   .removeClass(`translate-block-in scale-block-in`)
               }, i * delay)
             })
-            setTimeout(done, $(blockClass, el).length * delay - delay)
+            setTimeout(done, $blocks.length * delay - delay)
           }, 10)
         }
 

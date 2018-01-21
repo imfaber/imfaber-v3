@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div class="columns is-multiline" v-for="(column, rowIndex) in columns" :key="rowIndex">
-      <div v-for="(item, index) in column" :key="index" :class="columnClasses">
-        <slot :item="item"></slot>
-      </div>
+  <div class="columns is-multiline">
+    <div :class="columnClasses" v-for="item in items">
+      <slot :item="item"></slot>
     </div>
   </div>
 </template>

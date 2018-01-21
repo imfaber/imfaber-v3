@@ -118,6 +118,8 @@
 
       img[lazy=loaded] {
         opacity: 1;
+        position: relative;
+        z-index:9;
       }
     }
   }
