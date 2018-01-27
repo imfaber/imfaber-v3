@@ -50,7 +50,7 @@ const PageMixins = {
 
         $.fn.reverse    = [].reverse
         let transition = {}
-        let delay     = 100
+        let delay     = 50
         let blockClass  = '.block'
         let animation   = 'translate'
         transition.name = 'blocks'

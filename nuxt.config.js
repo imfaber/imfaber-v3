@@ -3,6 +3,7 @@ module.exports = {
     '~plugins/app',
     '~plugins/vue-lazyload',
     '~plugins/vue-awesome-swiper',
+    '~plugins/vue-vee-validate',
     '~plugins/vue-stickykit',
     { src: '~plugins/vue-particles', ssr: false },
     '~plugins/page-mixins'

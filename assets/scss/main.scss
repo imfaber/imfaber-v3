@@ -2,7 +2,7 @@
 @import "variables";
 
 // Bulma & Bourbon
-@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "../../node_modules/bourbon/core/bourbon";
 @import "../../node_modules/bulma/bulma";
 @import "../../node_modules/font-awesome/scss/font-awesome";
 
@@ -29,8 +29,10 @@
 @import "components/nav";
 @import "components/block";
 @import "components/typed";
+@import "components/form";
 @import "components/tag";
 @import "components/card";
 @import "components/page/page";
 @import "components/page/index";
 @import "components/page/work";
+@import "components/page/contact";

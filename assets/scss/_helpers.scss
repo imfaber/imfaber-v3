@@ -1,5 +1,5 @@
 .codify {
-  @include position();
+  position: relative;
   &:before,
   &:after {
     opacity: .4;

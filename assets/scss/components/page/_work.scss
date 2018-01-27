@@ -1,7 +1,7 @@
 .page--work-details {
 
   header.work__header {
-    @include position();
+    position: relative;
 
     * {
       color: rgba(255, 255, 255, .6);
@@ -12,7 +12,7 @@
         transition: all .4s ease;
 
         .fa {
-          font-size: 1rem;
+          font-size: $size-6;
         }
       }
       a:hover {
@@ -70,7 +70,7 @@
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: $size-5;
     color: $text-light;
     padding-top: 0;
     text-align: center;
@@ -95,11 +95,11 @@
   }
 
   .work-gallery {
-    @include position();
+    position: relative;
     .frame {
       overflow: hidden;
       border-radius: 10px;
-      @include position();
+      position: relative;
       display: inline-block;
       min-width: 100px;
       min-height: 150px;

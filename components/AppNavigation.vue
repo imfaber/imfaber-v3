@@ -20,7 +20,7 @@
                 <nuxt-link to="/work" class="navbar-item"
                            :class="{'is-active': isActiveItem('work')}">Work
                 </nuxt-link>
-                <nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">Lab</nuxt-link>
+                <!--<nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">Lab</nuxt-link>-->
                 <nuxt-link to="/contact" class="navbar-item" :class="{'is-active': isActiveItem('contact')}">Contact</nuxt-link>
             </div>
 

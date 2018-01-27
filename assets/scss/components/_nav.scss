@@ -28,7 +28,7 @@
   .navbar-brand {
     margin-left: 0 !important;
     a.navbar-item {
-      font-size: 1rem !important;
+      font-size: $size-6 !important;
       padding-left:0;
       span:first-child {
         margin-right: 5px;
@@ -41,14 +41,14 @@
     transition: all .4s ease;
     padding: $space-s $space-m;
     font-family: NunitoBold, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: $size-4;
     text-align: center;
-    @include position();
+    position: relative;
 
     &:after {
       content: '';
       @include position(absolute, null null 0 50%);
-      @include size(0 2px);
+      @include size(0, 2px);
       background: $green;
       opacity: 0;
       transition: all .4s ease;
@@ -70,7 +70,7 @@
     }
 
     @include desktop{
-      font-size: 1rem;
+      font-size: $size-6;
     }
 
     &.is-active {

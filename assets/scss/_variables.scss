@@ -23,6 +23,9 @@ $text-light: rgba(255, 255, 255, .4);
 $magenta: #ff3860;
 $green: #00ff6a;
 
+$primary: $green;
+$primary-invert: $body-color;
+
 // Tabs
 $tabs-border-bottom-color: lighten($body-color, 7%);
 $tabs-link-hover-border-bottom-color: $text-light;

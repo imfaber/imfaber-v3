@@ -2,7 +2,35 @@
   <AppSection class="page page--contact">
     <div class="container">
       <div class="content">
-        <h1 class="has-text-centered">Get in touch</h1>
+        <div class="block block--main">
+          <h1 class="block__header title is-h3 has-text-centered"><span class="codify">Get in touch</span></h1>
+          <div class="block__body has-text-centered">
+            <p class="is-size-5">If you wanna get in touch, talk to me about a project collaboration or just say hi,
+              feel free to contact me using the following social media or the form below.</p>
+            <nav class="level has-text-centered">
+              <div class="level-left">
+                <div class="level-item has-text-centered">
+                  <a class="navbar-item social-icon" target="_blank"
+                     href="https://github.com/imfaber">
+                    <span class="icon"><i class="fa fa-github"></i></span>
+                  </a>
+                </div>
+                <div class="level-item has-text-centered">
+                  <a class="navbar-item social-icon" target="_blank"
+                     href="https://twitter.com/imfaber">
+                    <span class="icon"><i class="fa fa-twitter"></i></span>
+                  </a>
+                </div>
+                <div class="level-item has-text-centered">
+                  <a class="navbar-item social-icon" target="_blank"
+                     href="https://www.linkedin.com/pub/fabrizio-meinero/35/a57/782">
+                    <span class="icon"><i class="fa fa-linkedin"></i></span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
             <ContactForm />
@@ -20,12 +48,3 @@ export default {
   components: { ContactForm, AppSection }
 }
 </script>
-
-<style scoped lang="scss">
-  .page--contact {
-    background: #60d7a9;
-    &:before {
-      background: #60d7a9;
-    }
-  }
-</style>
