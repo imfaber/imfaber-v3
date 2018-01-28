@@ -1,106 +1,112 @@
 <template>
-    <form @submit.prevent>
+    <div>
+        <form @submit.prevent v-if="!success">
 
-        <div class="block block--transparent">
-            <div class="input--kozakura"
-                 :class="{'input--filled': isFilled('name')}">
-                <input class="input__field input__field--kozakura"
-                       v-validate="'required'"
-                       name="name"
-                       :class="{'input': true, 'is-danger': errors.has('name') }"
-                       v-model="name"/>
-                <label
-                  class="input__label input__label--kozakura">Your name *</label>
-                <svg class="graphic graphic--kozakura" width="300%"
-                     height="100%" viewBox="0 0 1200 60"
-                     preserveAspectRatio="none">
-                    <path
-                      d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
-                </svg>
+            <div class="block block--transparent">
+                <div class="input--kozakura"
+                     :class="{'input--filled': isFilled('name')}">
+                    <input class="input__field input__field--kozakura"
+                           v-validate="'required'"
+                           name="name"
+                           :class="{'input': true, 'is-danger': errors.has('name') }"
+                           v-model="name"/>
+                    <label
+                      class="input__label input__label--kozakura">Your name *</label>
+                    <svg class="graphic graphic--kozakura" width="300%"
+                         height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                        <path
+                          d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <span v-show="errors.has('name')"
+                  class="help is-danger">{{ errors.first('name') }}</span>
+
+            <div class="block block--transparent">
+                <div class="input--kozakura"
+                     :class="{'input--filled': isFilled('email')}">
+                    <input class="input__field input__field--kozakura"
+                           v-validate="'required|email'"
+                           name="email"
+                           :class="{'input': true, 'is-danger': errors.has('email') }"
+                           v-model="email"/>
+                    <label
+                      class="input__label input__label--kozakura">Your email *</label>
+                    <svg class="graphic graphic--kozakura" width="300%"
+                         height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                        <path
+                          d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <span v-show="errors.has('email')"
+                  class="help is-danger">{{ errors.first('email') }}</span>
+
+            <div class="block block--transparent">
+                <div class="input--kozakura"
+                     :class="{'input--filled': isFilled('subject')}">
+                    <input class="input__field input__field--kozakura"
+                           v-validate="'required'"
+                           name="subject"
+                           :class="{'input': true, 'is-danger': errors.has('subject') }"
+                           v-model="subject"/>
+                    <label
+                      class="input__label input__label--kozakura">Subject *</label>
+                    <svg class="graphic graphic--kozakura" width="300%"
+                         height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                        <path
+                          d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <span v-show="errors.has('subject')"
+                  class="help is-danger">{{ errors.first('subject') }}</span>
+
+            <div class="block block--transparent">
+                <div class="input--kozakura input--textarea"
+                     :class="{'input--filled': isFilled('message')}">
+                    <textarea
+                      v-validate="'required'"
+                      name="message"
+                      :class="{'input': true, 'is-danger': errors.has('message') }"
+                      class="input__field input__field--kozakura "
+                      v-model="message"></textarea>
+                    <label class="input__label input__label--kozakura">Your message *</label>
+                    <svg class="graphic graphic--kozakura" width="300%"
+                         height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                        <path
+                          d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <span v-show="errors.has('message')"
+                  class="help is-danger">{{ errors.first('message') }}</span>
+
+            <div class="block block--transparent">
+                <div class="has-text-centered">
+                    <button class="button is-primary" :class="{'is-loading': sending}" @click="submit">
+                        Send your message
+                    </button>
+                    <span v-show="error"
+                          class="help is-danger">{{ error }}</span>
+                </div>
+            </div>
+        </form>
+
+        <div class="block block--transparent block--notification" v-if="success">
+            <div class="notification is-success">
+                <button class="delete" @click="closeSuccessMessage"></button>
+                <div v-html="success" class="has-text-centered"></div>
             </div>
         </div>
-        <span v-show="errors.has('name')"
-              class="help is-danger">{{ errors.first('name') }}</span>
-
-        <div class="block block--transparent">
-            <div class="input--kozakura"
-                 :class="{'input--filled': isFilled('email')}">
-                <input class="input__field input__field--kozakura"
-                       v-validate="'required|email'"
-                       name="email"
-                       :class="{'input': true, 'is-danger': errors.has('email') }"
-                       v-model="email"/>
-                <label
-                  class="input__label input__label--kozakura">Your email *</label>
-                <svg class="graphic graphic--kozakura" width="300%"
-                     height="100%" viewBox="0 0 1200 60"
-                     preserveAspectRatio="none">
-                    <path
-                      d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
-                </svg>
-            </div>
-        </div>
-        <span v-show="errors.has('email')"
-              class="help is-danger">{{ errors.first('email') }}</span>
-
-        <div class="block block--transparent">
-            <div class="input--kozakura"
-                 :class="{'input--filled': isFilled('subject')}">
-                <input class="input__field input__field--kozakura"
-                       v-validate="'required'"
-                       name="subject"
-                       :class="{'input': true, 'is-danger': errors.has('subject') }"
-                       v-model="subject"/>
-                <label
-                  class="input__label input__label--kozakura">Subject *</label>
-                <svg class="graphic graphic--kozakura" width="300%"
-                     height="100%" viewBox="0 0 1200 60"
-                     preserveAspectRatio="none">
-                    <path
-                      d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
-                </svg>
-            </div>
-        </div>
-        <span v-show="errors.has('subject')"
-              class="help is-danger">{{ errors.first('subject') }}</span>
-
-        <div class="block block--transparent">
-            <div class="input--kozakura input--textarea"
-                 :class="{'input--filled': isFilled('message')}">
-                <textarea
-                  v-validate="'required'"
-                  name="message"
-                  :class="{'input': true, 'is-danger': errors.has('message') }"
-                  class="input__field input__field--kozakura "
-                  v-model="message"></textarea>
-                <label class="input__label input__label--kozakura">Your message *</label>
-                <svg class="graphic graphic--kozakura" width="300%"
-                     height="100%" viewBox="0 0 1200 60"
-                     preserveAspectRatio="none">
-                    <path
-                      d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
-                </svg>
-            </div>
-        </div>
-        <span v-show="errors.has('message')"
-              class="help is-danger">{{ errors.first('message') }}</span>
-
-        <div class="block block--transparent">
-            <div class="has-text-centered">
-                <button class="button is-primary" :class="{'is-loading': sending}" @click="submit">
-                    Send your message
-                </button>
-                <span v-show="error"
-                      class="help is-danger">{{ error }}</span>
-            </div>
-        </div>
-
-
-    </form>
+    </div>
 </template>
 
 <script>
-
 
   export default {
     data() {
@@ -114,11 +120,15 @@
         sending: false,
       }
     },
-    computed: {},
     methods:  {
+      closeSuccessMessage(input) {
+        return this.success = false;
+      },
+
       isFilled(input) {
         return this[input];
       },
+
       submit(){
         this.$validator.validateAll().then(valid => {
           if (valid) {
@@ -129,7 +139,11 @@
               subject: this.subject,
               message: this.message,
             }).then(response => {
-              console.log(response);
+              this.success = `
+                    <span class="is-size-3">🙏</span><br />
+                    <strong class="is-size-5">Thanks for getting in touch!</strong><br />
+                    I will get back to you as soon as possible.
+                `
               this.sending = false
               this.error = false
             }).catch(error => {
@@ -140,7 +154,7 @@
         }).catch(() => {
           this.error = 'Something went wrong! Please try again later.'
         })
-      }
+      },
     },
   }
 </script>

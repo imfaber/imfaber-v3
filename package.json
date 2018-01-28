@@ -1,8 +1,8 @@
 {
-  "name": "contenta_vue_nuxt",
-  "version": "1.0.0-beta1",
-  "description": "Nuxt.js client for Contenta CMS",
-  "author": "yann <yann@yineo.fr>",
+  "name": "imfaber_v3",
+  "version": "1.0.0",
+  "description": "Imfaber website v3",
+  "author": "imfaber <imfaberdev@gmail.com>",
   "private": true,
   "dependencies": {
     "axios": "0.16.2",

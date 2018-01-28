@@ -63,6 +63,13 @@
   background: transparent;
 }
 
+.block--notification {
+  .notification>.delete {
+    top: 10px;
+    right: 10px;
+  }
+}
+
 
 .block--card {
   padding: 0;
