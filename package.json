@@ -5,6 +5,7 @@
   "author": "imfaber <imfaberdev@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/google-tag-manager": "^1.1.0",
     "axios": "0.16.2",
     "bourbon": "^5.0.0",
     "bulma": "^0.6.1",
