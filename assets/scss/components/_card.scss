@@ -96,7 +96,7 @@
   }
 
   .description {
-    display: flex;
+    display: none;
     height: 100%;
     align-items: center;
     overflow: hidden;
@@ -120,7 +120,11 @@
     }
   }
 
-  &:hover {
+  .no-touchevents & .description {
+    display: flex;
+  }
+
+  .no-touchevents &:hover {
     .card-image span.img {
       transition: transform 2s ease, opacity .4s ease;
       transform: scale(1.4) rotate(15deg);
@@ -130,11 +134,12 @@
     .description section {
       .control {
         transform: translateY(0);
+        z-index: 9;
         opacity: 1;
         //transition-timing-function: $ease-bounce-down;
         @for $i from 0 through 10 {
           &:nth-child(#{$i}) {
-            transition: all .4s $ease-bounce-down #{$i * 0.05}s;
+            transition: opacity .4s $ease-bounce-down #{$i * 0.05}s, transform .4s $ease-bounce-down #{$i * 0.05}s;
           }
         }
       }

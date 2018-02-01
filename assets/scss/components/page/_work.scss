@@ -23,11 +23,15 @@
     .pager,
     .block--pager {
       overflow: visible;
-      display: none;
+      text-align: center;
+      margin: 25px 0;
+      z-index: 1;
+      position: relative;
+
       @include tablet{
-        display: block;
+        @include position(absolute, $gap $gap null null);
+        margin: 0;
       }
-      @include position(absolute, $gap $gap null null);
 
       .button {
         transition: all .4s ease;
@@ -144,5 +148,15 @@
 
   .tabs li {
     width: 70px;
+  }
+
+  .is_stuck {
+    @include mobile{
+      position: relative !important;
+      top: 0!important;
+      + div {
+        display: none !important;
+      }
+    }
   }
 }

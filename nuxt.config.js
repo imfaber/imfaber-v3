@@ -51,6 +51,9 @@ module.exports = {
       {name: 'MobileOptimized', content: 'width'},
       {name: 'HandheldFriendly', content: 'true'},
     ],
+    script: [
+      { src: '/js/modernizr-custom.js' }
+    ],
   },
 
   css: [
