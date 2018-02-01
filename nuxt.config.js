@@ -35,15 +35,16 @@ module.exports = {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
     },
-    modules: [
-      ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID || 'GTM-XXXXXXX' }],
-    ],
     postcss: {
       plugins: {
         'postcss-custom-properties': false
       }
     }
   },
+
+  modules: [
+    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID || 'GTM-XXXXXXX' }],
+  ],
 
   head:    {
     title: 'Fabrizio Meinero - Imfaber',
