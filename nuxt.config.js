@@ -42,10 +42,6 @@ module.exports = {
     }
   },
 
-  modules: [
-    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID || 'GTM-XXXXXXX' }],
-  ],
-
   head:    {
     title: 'Fabrizio Meinero - Imfaber',
     meta: [
@@ -76,6 +72,7 @@ module.exports = {
    ** Modules
    */
   modules: [
+    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID || 'GTM-XXXXXXX' }],
     //  '@nuxtjs/pwa'
   ]
 }
