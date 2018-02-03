@@ -4,15 +4,14 @@ body {
 
 /* Make selected text gold on a red background */
 ::-moz-selection {
-  color: gold;
-  background: red;
+  color: $grey;
+  background: $green;
 }
 
 ::selection {
   color: $grey;
   background: $green;
 }
-
 
 a {
   transition: all .4s ease;

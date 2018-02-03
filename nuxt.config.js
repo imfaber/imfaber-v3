@@ -35,11 +35,12 @@ module.exports = {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
     },
+
     postcss: {
       plugins: {
         'postcss-custom-properties': false
       }
-    }
+    },
   },
 
   head: {
@@ -50,8 +51,8 @@ module.exports = {
         name:    'description',
         content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'
       },
-      {hid: 'og:image', name: 'og:image', content: '/images/imfaber-logo.png'},
-      {hid: 'twitter:image', name: 'twitter:image', content: '/images/imfaber-logo.png'},
+      {hid: 'og:image', name: 'og:image', content: `${process.env.baseUrl}/images/imfaber-logo.png`},
+      {hid: 'twitter:image', name: 'twitter:image', content: `${process.env.baseUrl}/images/imfaber-logo.png`},
       {name: 'viewport', content: 'width=device-width, user-scalable=no'},
       {name: 'twitter:card', content: 'summary'},
       {name: 'MobileOptimized', content: 'width'},
@@ -63,7 +64,7 @@ module.exports = {
   },
 
   css: [
-    '@/assets/scss/main.scss'
+    '@assets/scss/main.scss',
   ],
 
   /*

@@ -1,10 +1,14 @@
+// Bulma
+@import "~bulma";
+
 // Variables
 @import "variables";
 
-// Bulma & Bourbon
-@import "../../node_modules/bourbon/core/bourbon";
-@import "../../node_modules/bulma/bulma";
-@import "../../node_modules/font-awesome/scss/font-awesome";
+//// Bourbon
+@import "~bourbon/core/bourbon";
+
+// Font awesome
+@import "~font-awesome/scss/font-awesome";
 
 // Mixins
 @import "mixins";
