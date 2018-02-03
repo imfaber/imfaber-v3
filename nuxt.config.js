@@ -1,3 +1,7 @@
+const baseUrl       = process.env.BASE_URL || 'http://localhost:3000',
+      jsonApiServer = process.env.JSON_API_SERVER || 'http://imfaber-cms.docker.localhost:8000',
+      jsonApiPrefix = process.env.JSON_API_PREFIX || 'api'
+
 module.exports = {
   plugins: [
     '~plugins/app',
@@ -10,10 +14,9 @@ module.exports = {
   ],
   env:     {
     // your JSON API server URL :
-    baseUrl:       process.env.BASE_URL || 'http://localhost:3000',
-    jsonApiServer: process.env.JSON_API_SERVER || 'http://imfaber-cms.docker.localhost:8000',
-    // jsonApiServer: 'https://live-contentacms.pantheonsite.io',
-    jsonApiPrefix: process.env.JSON_API_PREFIX || 'api'
+    baseUrl:       baseUrl,
+    jsonApiServer: jsonApiServer,
+    jsonApiPrefix: jsonApiPrefix
   },
   router:  {
     // check API server is up, to avoid ugly errors pages
@@ -30,7 +33,7 @@ module.exports = {
   build:   {
     // this modules are included in the "vendor" js file
     // because we use them in every page
-    vendor:  ['axios', 'waterwheel', 'jsonapi-parse'],
+    vendor: ['axios', 'waterwheel', 'jsonapi-parse'],
     extend (config) {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
@@ -51,8 +54,16 @@ module.exports = {
         name:    'description',
         content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'
       },
-      {hid: 'og:image', name: 'og:image', content: `${process.env.BASE_URL || 'http://localhost:3000'}/images/imfaber-logo.png`},
-      {hid: 'twitter:image', name: 'twitter:image', content: `${process.env.BASE_URL || 'http://localhost:3000'}/images/imfaber-logo.png`},
+      {
+        hid:     'og:image',
+        name:    'og:image',
+        content: `${baseUrl}/images/imfaber-logo.png`
+      },
+      {
+        hid:     'twitter:image',
+        name:    'twitter:image',
+        content: `${baseUrl}/images/imfaber-logo.png`
+      },
       {name: 'viewport', content: 'width=device-width, user-scalable=no'},
       {name: 'twitter:card', content: 'summary'},
       {name: 'MobileOptimized', content: 'width'},
@@ -80,6 +91,5 @@ module.exports = {
    */
   modules: [
     ['@nuxtjs/google-tag-manager', {id: process.env.GTM_ID || 'GTM-XXXXXXX'}],
-    //  '@nuxtjs/pwa'
   ]
 }
