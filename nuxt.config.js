@@ -5,7 +5,7 @@ module.exports = {
     '~plugins/vue-awesome-swiper',
     '~plugins/vue-vee-validate',
     '~plugins/vue-stickykit',
-    { src: '~plugins/vue-particles', ssr: false },
+    {src: '~plugins/vue-particles', ssr: false},
     '~plugins/page-mixins'
   ],
   env:     {
@@ -30,7 +30,7 @@ module.exports = {
   build:   {
     // this modules are included in the "vendor" js file
     // because we use them in every page
-    vendor: ['axios', 'waterwheel', 'jsonapi-parse'],
+    vendor:  ['axios', 'waterwheel', 'jsonapi-parse'],
     extend (config) {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
@@ -42,17 +42,23 @@ module.exports = {
     }
   },
 
-  head:    {
-    title: 'Fabrizio Meinero - Imfaber',
-    meta: [
-      {hid: 'description', name: 'description', content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'},
+  head: {
+    title:  'Fabrizio Meinero - Imfaber',
+    meta:   [
+      {
+        hid:     'description',
+        name:    'description',
+        content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'
+      },
+      {hid: 'og:image', name: 'og:image', content: '/images/imfaber-logo.png'},
+      {hid: 'twitter:image', name: 'twitter:image', content: '/images/imfaber-logo.png'},
       {name: 'viewport', content: 'width=device-width, user-scalable=no'},
       {name: 'twitter:card', content: 'summary'},
       {name: 'MobileOptimized', content: 'width'},
       {name: 'HandheldFriendly', content: 'true'},
     ],
     script: [
-      { src: '/js/modernizr-custom.js' }
+      {src: '/js/modernizr-custom.js'}
     ],
   },
 
@@ -64,7 +70,7 @@ module.exports = {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#00ff6a',
+    color:  '#00ff6a',
     height: '3px'
   },
 
@@ -72,7 +78,7 @@ module.exports = {
    ** Modules
    */
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID || 'GTM-XXXXXXX' }],
+    ['@nuxtjs/google-tag-manager', {id: process.env.GTM_ID || 'GTM-XXXXXXX'}],
     //  '@nuxtjs/pwa'
   ]
 }

@@ -25,9 +25,8 @@
 
       const meta = {
         title:       'Work',
-        description: 'Checkout my web portfolio',
+        description: 'Check out my latest web software development portfolio projects.',
         url:         `${process.env.baseUrl}/work`,
-//        image: work.image.thumbnail.url,
       }
 
       return {works, meta};

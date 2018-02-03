@@ -15,8 +15,8 @@ const PageMixins = {
         head.link = []
         if (this.meta && this.meta.title) {
           head.title = `${this.meta.title} | Fabrizio Meinero - Imfaber`
-          head.meta.push({hid: 'twitter:title', name: 'twitter:title', content: this.meta.title})
-          head.meta.push({hid: 'og:title', name: 'og:title', content: this.meta.title})
+          head.meta.push({hid: 'twitter:title', name: 'twitter:title', content: `${this.meta.title} | Fabrizio Meinero - Imfaber`})
+          head.meta.push({hid: 'og:title', name: 'og:title', content: `${this.meta.title} | Fabrizio Meinero - Imfaber`})
         }
         if (this.meta && this.meta.description) {
           head.meta.push({hid: 'description', name: 'description', content: this.meta.description})
