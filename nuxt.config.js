@@ -51,8 +51,8 @@ module.exports = {
         name:    'description',
         content: 'I am a Front End Engineer, Back End Developer and UI/UX specialist. Check out my lab and web portfolio.'
       },
-      {hid: 'og:image', name: 'og:image', content: `${process.env.baseUrl}/images/imfaber-logo.png`},
-      {hid: 'twitter:image', name: 'twitter:image', content: `${process.env.baseUrl}/images/imfaber-logo.png`},
+      {hid: 'og:image', name: 'og:image', content: `${process.env.BASE_URL || 'http://localhost:3000'}/images/imfaber-logo.png`},
+      {hid: 'twitter:image', name: 'twitter:image', content: `${process.env.BASE_URL || 'http://localhost:3000'}/images/imfaber-logo.png`},
       {name: 'viewport', content: 'width=device-width, user-scalable=no'},
       {name: 'twitter:card', content: 'summary'},
       {name: 'MobileOptimized', content: 'width'},
