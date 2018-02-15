@@ -1,31 +1,72 @@
 .tags {
-
   .tag {
-    background: $body-color;
-    color: $grey-lighter;
     transition: all .4s ease;
-    //border: 1px solid $body-color;
   }
+  @include tag-color();
+}
 
-  &.is-active .tag {
-    background: $green;
-    border-color: $green;
-    color: $black;
-  }
+.tags--sass,
+.tags--css3_sass {
+  @include tag-color($bg-color-active: #c6538c, $text-color-active: $white);
+}
 
-  &:hover .tag {
-    background: $green;
-    border-color: $green;
-    color: $black;
-  }
+.tags--php{
+  @include tag-color($bg-color-active: #777bb3, $text-color-active: $white);
+}
 
-  .tag.is-delete {
-    background:shade($green, 30%);
-    border-left: 0;
-    color: $black;
-  }
+.tags--angular{
+  @include tag-color($bg-color-active: #dd0330, $text-color-active: $white);
+}
 
-  &:hover .tag.is-delete {
-    background: $green;
-  }
+.tags--cakephp{
+  @include tag-color($bg-color-active: #d33c44, $text-color-active: $white);
+}
+
+.tags--vue_js{
+  @include tag-color($bg-color-active: #4fc08d, $text-color-active: $body-color);
+}
+
+.tags--mysql{
+  @include tag-color($bg-color-active: #01758f, $text-color-active: $white);
+}
+
+.tags--backbone_js{
+  @include tag-color($bg-color-active: #0271b5, $text-color-active: $white);
+}
+
+.tags--ui_ux_animation{
+  @include tag-color($bg-color-active: #ea6d12, $text-color-active: $white);
+}
+
+.tags--map{
+  @include tag-color($bg-color-active: #DD6200, $text-color-active: $white);
+}
+
+.tags--community{
+  @include tag-color($bg-color-active: #4db4bd, $text-color-active: $white);
+}
+
+.tags--js,
+.tags--javascript{
+  @include tag-color($bg-color-active: #ffdd48, $text-color-active: $body-color);
+}
+
+.tags--node_js,
+.tags--nodejs{
+  @include tag-color($bg-color-active: #026e00, $text-color-active: $white);
+}
+
+.tags--css{
+  @include tag-color($bg-color-active: #264ce4, $text-color-active: $white);
+}
+
+.tags--html5,
+.tags--html{
+  @include tag-color($bg-color-active: #f1652a, $text-color-active: $white);
+}
+
+.tags--drupal_6,
+.tags--drupal_7,
+.tags--drupal_8{
+  @include tag-color($bg-color-active: #0678be, $text-color-active: $white);
 }

@@ -4,3 +4,27 @@
     @include padding($gap);
   }
 }
+
+@mixin tag-color ($bg-color: $body-color, $bg-color-active: $green, $text-color: $grey-lighter, $text-color-active: $black) {
+  .tag {
+    background: $bg-color;
+    color: $text-color;
+  }
+
+  &.is-active .tag,
+  &:hover .tag {
+    background: $bg-color-active;
+    border-color: $bg-color-active;
+    color: $text-color-active;
+  }
+
+  .tag.is-delete {
+    background:shade($bg-color-active, 30%);
+    border-left: 0;
+    color: $text-color-active;
+  }
+
+  &:hover .tag.is-delete {
+    background: $bg-color-active;
+  }
+}

@@ -12,7 +12,12 @@
       <div class="card-content">
         <slot name="content"></slot>
       </div>
+
     </div>
+
+    <footer class="card-footer">
+      <slot name="footer"></slot>
+    </footer>
   
   </div>
 </template>
