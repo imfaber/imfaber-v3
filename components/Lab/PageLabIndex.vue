@@ -29,6 +29,10 @@
         filters: 'lab/filters'
       }),
     },
+    mounted () {
+      console.log(this.articles);
+//      console.log(this.article.paragraphs[0].type);
+    },
   }
 </script>
 

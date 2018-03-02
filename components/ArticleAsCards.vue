@@ -1,7 +1,7 @@
 <template>
     <div class="articles">
         <BulmaGrid :items="articles" :itemsByRow="cardsByRow">
-            <template scope="props">
+            <template slot-scope="props">
                 <ArticleAsCard :article="props.item" :base-path="basePath"></ArticleAsCard>
             </template>
         </BulmaGrid>

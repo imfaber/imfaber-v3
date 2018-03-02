@@ -4,7 +4,7 @@
             <BulmaCard :class="`card--article article--${article.slug.value}`">
                 <template v-if="article.image">
                     <figure slot="image" class="image is-16by9">
-                        <img v-lazy="article.image.thumbnail.url" :alt="article.title" />
+                        <img class="lazy-image" v-lazy="article.image.imageFile.meta.derivatives.d5_standard" :alt="article.title" />
                     </figure>
                 </template>
                 <div class="content" slot="content">

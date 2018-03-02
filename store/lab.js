@@ -34,7 +34,7 @@ export const actions = {
   async findOneBySlug ({commit}, slug) {
     const query = {
       sort:    '-year',
-      include: 'image,image.thumbnail,desktop_gallery,desktop_gallery.imageFile,tablet_gallery,tablet_gallery.imageFile,mobile_gallery,mobile_gallery.imageFile,role,workplace,technology',
+      include: 'image,image.imageFile,category,tags,paragraphs,paragraphs.field_media,paragraphs.field_media.imageFile',
       // page:    {
       //   limit: 1
       // },
@@ -49,12 +49,13 @@ export const actions = {
         }
       },
       fields:  {
-        images: 'name,thumbnail,imageFile',
-        files:  'filename,url',
+        images: 'name,imageFile',
+        // files:  'filename,url',
+        // 'paragraph_type': 'label'
       }
 
     }
-    const res   = await jsonApi.get('articles', query)
+    const res = await jsonApi.get('articles', query)
     return res[0] || {}
   },
 
@@ -99,11 +100,9 @@ export const actions = {
   async findAll ({commit}, limit = 4, offset = 0) {
     const query = {
       sort:    '-date',
-      include: 'image,image.thumbnail,category,tags',
+      include: 'image,image.imageFile,category,tags',
       fields:  {
         articles:  'title,category,image,slug,tags',
-        images: 'name,thumbnail',
-        files:  'filename,url'
       },
       filter: {
         status: {
@@ -123,7 +122,7 @@ export const actions = {
       }
     }
     const list = await jsonApi.get('articles', query)
-    commit('list', list)
+    commit('list', list.data)
     return list
   },
 

@@ -1,6 +1,7 @@
-const baseUrl       = process.env.BASE_URL || 'http://localhost:3000',
-      jsonApiServer = process.env.JSON_API_SERVER || 'http://imfaber-cms.docker.localhost:8000',
-      jsonApiPrefix = process.env.JSON_API_PREFIX || 'api'
+const baseUrl         = process.env.BASE_URL || 'http://localhost:3000',
+      jsonApiServer   = process.env.JSON_API_SERVER || 'http://imfaber-cms.docker.localhost:8000',
+      jsonApiPrefix   = process.env.JSON_API_PREFIX || 'api',
+      jsonApiClientId = process.env.JSON_API_CLIENT_ID || '530f76ec-0ea1-4c1a-b1e9-79b1c7a78634'
 
 module.exports = {
   plugins: [
@@ -9,14 +10,17 @@ module.exports = {
     '~plugins/vue-awesome-swiper',
     '~plugins/vue-vee-validate',
     '~plugins/vue-stickykit',
+    '~plugins/vue-youtube-embed',
+    '~plugins/vue-social-sharing',
     {src: '~plugins/vue-particles', ssr: false},
     '~plugins/page-mixins'
   ],
   env:     {
     // your JSON API server URL :
-    baseUrl:       baseUrl,
-    jsonApiServer: jsonApiServer,
-    jsonApiPrefix: jsonApiPrefix
+    baseUrl:         baseUrl,
+    jsonApiServer:   jsonApiServer,
+    jsonApiPrefix:   jsonApiPrefix,
+    jsonApiClientId: jsonApiClientId,
   },
   router:  {
     // check API server is up, to avoid ugly errors pages
