@@ -8,7 +8,7 @@
                         {{article.title}}
                     </h1>
 
-                    <div class="columns is-mobile is-centered is-multiline">
+                    <div class="columns is-mobile is-centered is-multiline article-meta">
                         <div class="column is-narrow">
                             <time :datetime="article.createdAt">{{createdAtFormatted}}</time>
                         </div>
@@ -18,7 +18,19 @@
                                    aria-hidden="true"></i>
                                 <AppFilters
                                   class="field is-grouped is-grouped-multiline column is-narrow"
+                                  :path="filterPath"
                                   :filters="article.tags"></AppFilters>
+                            </div>
+                        </div>
+                        <div class="column is-narrow">
+                            <div class="columns is-mobile is-centered">
+                                <i class="column is-narrow fa fa-comments"
+                                   aria-hidden="true"></i>
+                                <div class="column is-narrow">
+                                    <a href="#disqus_thread" class="disqus-comment-count" :data-disqus-identifier="article.id">
+                                        Comments
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,6 +55,7 @@
                                     </li>
                                 </ol>
                             </div>
+                            <AppShare></AppShare>
                         </div>
                     </div>
 
@@ -54,23 +67,38 @@
         <div class="article__content">
             <div class="block block--transparent article-links">
                 <div class="buttons has-addons is-centered">
-                    <a class="button is-medium is-warning">
-                    <span class="icon">
-                          <i class="fa fa-github"></i>
-                    </span>
-                        <span>GitHub</span>
+                    <a class="button is-warning hint--top hint--rounded hint--bounce"
+                       v-if="article.demo"
+                       :href="article.demo.uri"
+                       target="_blank"
+                       aria-label="See a demo">
+                        <span class="icon">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span v-if="article.demo.title">{{article.demo.title}}</span>
+                        <span v-else>Demo</span>
                     </a>
-                    <a class="button is-medium is-danger">
-                    <span class="icon">
-                          <i class="fa fa-github"></i>
-                    </span>
-                        <span>GitHub</span>
+                    <a class="button is-danger hint--top hint--rounded hint--bounce"
+                       v-if="article.source_code"
+                       :href="article.source_code.uri"
+                       target="_blank"
+                       aria-label="Get the source code">
+                        <span class="icon">
+                            <i class="fa fa-code" aria-hidden="true"></i>
+                        </span>
+                        <span v-if="article.source_code.title">{{article.source_code.title}}</span>
+                        <span v-else>Code</span>
                     </a>
-                    <a class="button is-medium is-info">
-                    <span class="icon">
-                          <i class="fa fa-github"></i>
-                    </span>
-                        <span>GitHub</span>
+                    <a class="button is-info hint--top hint--rounded hint--bounce"
+                       v-if="article.project"
+                       :href="article.project.uri"
+                       target="_blank"
+                       aria-label="Go to the project page">
+                        <span class="icon">
+                            <i class="fa fa-asterisk" aria-hidden="true"></i>
+                        </span>
+                        <span v-if="article.project.title">{{article.project.title}}</span>
+                        <span v-else>Project</span>
                     </a>
                 </div>
             </div>
@@ -111,31 +139,36 @@
             </div>
         </div>
 
-        <section class="block block--transparent">
+        <div id="disqus_thread"></div>
+        <script>
+           var disqus_config = function () {
+           this.page.url = location.origin + location.pathname;
+           this.page.identifier = '{{article.id}}';
+           };
 
-        </section>
-
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://imfaber.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
     </article>
 </template>
 
 <script>
   import moment from 'moment'
   import AppFilters from './AppFilters.vue'
+  import AppShare from './AppShare.vue'
   import { getIdFromURL, getTimeFromURL } from 'vue-youtube-embed'
+  import 'hint.css'
+  import $ from 'jquery'
 
   export default {
-    components: {AppFilters},
+    components: {AppFilters, AppShare},
     props:      {
       article: {type: Object, default: () => {}},
-    },
-    data(){
-      return {
-        stikyKitOptions: {
-          parent:     '.page',
-          offset_top: 70
-        },
-        zoomed: []
-      }
+      filterPath: {type: String, default: ''},
     },
     computed:   {
       createdAtFormatted(){

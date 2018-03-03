@@ -16,7 +16,7 @@ export default {
       title: article.title,
       description: striptags(article.body.summary || article.body.value).trim(),
       url: `${process.env.baseUrl}/lab/${article.slug.value}`,
-      image: article.image.imageFile.url || '',
+      image: article.image.imageFile.meta.derivatives.d10_standard || '',
     }
 
     return {article, meta};

@@ -33,7 +33,7 @@ export const actions = {
 
   async findOneBySlug ({commit}, slug) {
     const query = {
-      sort:    '-year',
+      sort:    '-createdAt',
       include: 'image,image.imageFile,category,tags,paragraphs,paragraphs.field_media,paragraphs.field_media.imageFile',
       // page:    {
       //   limit: 1
@@ -65,12 +65,10 @@ export const actions = {
     for (let i = 0; i < termMachineName.length; ++i) tagValuses[i] = termMachineName[i]
 
     const query = {
-      sort:    '-date',
-      include: 'image,image.thumbnail,technology',
+      sort:    '-createdAt',
+      include: 'image,image.imageFile,category,tags',
       fields:  {
-        works:  'title,technology,image,slug,background_color',
-        images: 'name,thumbnail',
-        files:  'filename,url'
+        articles:  'title,category,image,slug,tags',
       },
       filter: {
         status: {
@@ -79,7 +77,7 @@ export const actions = {
         },
         tags: {
           condition: {
-            path: 'tads.machine_name',
+            path: 'tags.machine_name',
             value: tagValuses,
             operator: 'IN'
           }
@@ -99,7 +97,7 @@ export const actions = {
 
   async findAll ({commit}, limit = 4, offset = 0) {
     const query = {
-      sort:    '-date',
+      sort:    '-createdAt',
       include: 'image,image.imageFile,category,tags',
       fields:  {
         articles:  'title,category,image,slug,tags',

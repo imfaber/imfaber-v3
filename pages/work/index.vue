@@ -7,6 +7,10 @@
 
   export default {
     components: {PageWorkIndex},
+//    watchQuery: [
+//      'filter',
+//      'page',
+//    ],
 
     async asyncData ({store, query}) {
       const filter = query.filter

@@ -1,5 +1,17 @@
 .article {
 
+  @include mobile {
+    h1.is-1 {
+      font-size: 2rem;
+    }
+    h2.is-2 {
+      font-size: 1.8rem;
+    }
+    h3.is-3 {
+      font-size: 1.5rem;
+    }
+  }
+
   .article__header {
     .block {
       overflow: visible;
@@ -25,29 +37,29 @@
 
     .block .block__body {
       @include padding($space-s 0 $space-xxl);
-      @include tablet{
+      @include tablet {
         @include padding($space-m 0 $space-xxl);
       }
 
-      > .columns > .column {
+      .article-meta > .column {
         //@include margin(null $gap/2);
         i {
           @extend .is-size-5;
           @include position(relative, 2px null null 12px);
         }
       }
-      
+
       .table-of-contents {
         background: lighten($body-color, 7%);
         border-radius: 10px;
         padding: $gap;
-        @include until($desktop){
+        @include until($desktop) {
           display: none;
-        };
+        }
 
         ol {
           list-style: none;
-          li:not(:last-child){
+          li:not(:last-child) {
             margin-bottom: $space-s;
           }
           a {
@@ -58,11 +70,26 @@
               margin-right: $space-s;
             }
 
-            &:hover{
+            &:hover {
               &:before {
                 text-decoration: none;
               }
             }
+          }
+        }
+      }
+
+      .social-sharing {
+        margin-top: 0;
+        @include desktop {
+          margin-top: $space-m;
+        }
+      ;
+        span {
+          cursor: pointer;
+          i {
+            color: lighten($body-color, 7%);
+            font-size: 30px;
           }
         }
       }
@@ -72,21 +99,37 @@
   .article__content {
 
     .article-links {
-      margin-top: -23px;
+      margin-top: -20px;
+      overflow: visible;
 
       a {
         border-radius: 10px;
-        margin-right: 0!important;
+        margin-right: 0 !important;
         .icon {
           transition: all .3s ease;
         }
-        &:hover {
-          .icon {
-            transform: scale(1.5);
-          }
+        //&:hover {
+        //  .icon {
+        //    transform: scale(1.5);
+        //  }
+        //}
+      }
+
+      @include from(500px) {
+        margin-top: -23px;
+        a {
+          font-size: 1.25rem;
+        }
+      }
+      @include desktop {
+        margin-top: -28px;
+        a {
+          font-size: 1.5rem;
         }
       }
     }
+
+
 
     .paragraphs {
       background: white;
@@ -96,33 +139,36 @@
       @include padding($space-xs null $space-xl);
       @extend .is-size-5;
 
-
       .paragraph__container {
         @include padding(0 $gap);
-        @include tablet{
+        @include tablet {
           @include padding(0 60px);
         }
-        @include desktop{
+        @include desktop {
           @include padding(0 150px);
         }
-        @include widescreen{
+        @include widescreen {
           @include padding(0 200px);
         }
-        @include fullhd{
+        @include fullhd {
           @include padding(0 250px);
         }
       }
 
+      .paragraph {
+        padding-top: $space-xxl;
+      }
+
       h2 {
         color: $body-color;
-        margin: $space-xxl 0 $space-l;
+        margin: 0 0 $space-l;
 
         a {
           position: relative;
           color: $body-color;
 
           &:hover,
-          &:focus{
+          &:focus {
             color: $body-color;
           }
 
@@ -148,8 +194,29 @@
           }
         }
 
+      }
+
+      .paragraph--quote {
+
 
       }
+    }
+  }
+
+  #disqus_thread {
+    margin: $space-l 0;
+    @include padding(0 $gap);
+    @include tablet {
+      @include padding(0 60px);
+    }
+    @include desktop {
+      @include padding(0 150px);
+    }
+    @include widescreen {
+      @include padding(0 200px);
+    }
+    @include fullhd {
+      @include padding(0 250px);
     }
   }
 }

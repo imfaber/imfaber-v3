@@ -2,7 +2,7 @@
   <AppSection v-if="work" class="page page--work-details"
               :class="'work--' + work.slug.value">
 
-    <style>
+    <style lang="scss">
       .nuxt-progress{
       background: {{ work.background_color.color}} !important;
       }
@@ -22,6 +22,10 @@
       .tabs li.is-active a{
       border-bottom-color: {{ work.background_color.color}};
       color: {{ work.background_color.color}};
+      }
+
+      .page--work-details header.work__header .block--main:before {
+        background: {{ work.background_color.color}};
       }
     </style>
 

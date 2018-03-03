@@ -15,7 +15,7 @@
   &:hover .tag {
     background: $bg-color-active;
     border-color: $bg-color-active;
-    color: $text-color-active;
+    color: $text-color-active !important;
   }
 
   .tag.is-delete {

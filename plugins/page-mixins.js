@@ -48,12 +48,12 @@ const PageMixins = {
         // console.log('from', from)
         // console.log('to', to)
 
-        if (to.hash) {
-          $('html,body').animate({
-            scrollTop: $(to.hash).offset().top - 80
-          }, 500);
-          return;
-        }
+        // if (to.hash) {
+        //   $('html,body').animate({
+        //     scrollTop: $(to.hash).offset().top - 80
+        //   }, 500);
+        //   return;
+        // }
 
         $.fn.reverse    = [].reverse
         let transition = {}
@@ -104,7 +104,6 @@ const PageMixins = {
             $(elem).toggleClass(`${animation}-block-out`)
           })
         }
-
         return transition
       },
 

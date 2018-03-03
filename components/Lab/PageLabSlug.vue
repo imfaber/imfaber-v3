@@ -1,7 +1,7 @@
 <template>
   <AppSection v-if="article" class="page page--lab-article"
               :class="'page--' + article.slug.value">
-    <ArticleAsContent :article="article"></ArticleAsContent>
+    <ArticleAsContent filter-path="/lab" :article="article"></ArticleAsContent>
   </AppSection>
 </template>
 
