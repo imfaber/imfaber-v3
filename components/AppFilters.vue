@@ -18,11 +18,11 @@
             </div>
         </div>
         <div class="control" v-if="resetButton && filterParams.length">
-            <div class="tags has-addons is-active">
-                <span class="tag"
-                      @click.prevent="reset()">
-                    Reset
-                </span>
+            <div class="tags has-addons is-active reset">
+                <!--<span class="tag"-->
+                      <!--@click.prevent="reset()">-->
+                    <!--Reset-->
+                <!--</span>-->
                 <span class="tag is-delete" @click.prevent="reset()"></span>
             </div>
         </div>

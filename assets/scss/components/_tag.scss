@@ -7,15 +7,15 @@
 
 .tags--sass,
 .tags--css3_sass {
-  @include tag-color($bg-color-active: #c6538c, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-css, $text-color-active: $white);
 }
 
 .tags--php{
-  @include tag-color($bg-color-active: #777bb3, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-php, $text-color-active: $white);
 }
 
 .tags--angular{
-  @include tag-color($bg-color-active: #dd0330, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-angular, $text-color-active: $white);
 }
 
 .tags--cakephp{
@@ -23,7 +23,7 @@
 }
 
 .tags--vue_js{
-  @include tag-color($bg-color-active: #4fc08d, $text-color-active: $body-color);
+  @include tag-color($bg-color-active: $color-vuejs, $text-color-active: $body-color);
 }
 
 .tags--mysql{
@@ -43,30 +43,42 @@
 }
 
 .tags--community{
-  @include tag-color($bg-color-active: #4db4bd, $text-color-active: $white);
+  @include tag-color($bg-color-active: #4db4bd, $text-color-active: $body-color);
 }
 
 .tags--js,
 .tags--javascript{
-  @include tag-color($bg-color-active: #ffdd48, $text-color-active: $body-color);
+  @include tag-color($bg-color-active: $color-js, $text-color-active: $body-color);
 }
 
 .tags--node_js,
 .tags--nodejs{
-  @include tag-color($bg-color-active: #026e00, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-node, $text-color-active: $white);
 }
 
 .tags--css{
-  @include tag-color($bg-color-active: #264ce4, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-css, $text-color-active: $white);
 }
 
 .tags--html5,
 .tags--html{
-  @include tag-color($bg-color-active: #f1652a, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-html, $text-color-active: $white);
 }
 
 .tags--drupal_6,
 .tags--drupal_7,
 .tags--drupal_8{
-  @include tag-color($bg-color-active: #0678be, $text-color-active: $white);
+  @include tag-color($bg-color-active: $color-drupal, $text-color-active: $white);
+}
+
+.tags.reset {
+  .tag.is-delete {
+    background: transparent;
+    border-left: 0;
+    color: $grey-lighter !important;
+  }
+
+  &:hover .tag.is-delete {
+    background: lighten($body-color, 3%);
+  }
 }

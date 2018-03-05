@@ -12,6 +12,7 @@ module.exports = {
     '~plugins/vue-stickykit',
     '~plugins/vue-youtube-embed',
     '~plugins/vue-social-sharing',
+    '~plugins/vue-prism',
     {src: '~plugins/vue-particles', ssr: false},
     '~plugins/page-mixins'
   ],
