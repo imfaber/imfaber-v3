@@ -1,7 +1,10 @@
 <template>
     <AppSection v-if="articles" class="page page--lab-index">
         <div class="block block--filters">
-            <h1 class="block__header title is-h3 has-text-centered"><span class="codify">Laboratory</span></h1>
+            <div class="block__header">
+                <h1 class="title is-1 has-text-centered is-spaced"><span class="codify">Laboratory</span></h1>
+                <p class="subtitle is-4 has-text-centered">Tools, modules, experiments and everything else accomplished on my spare software development time.</p>
+            </div>
             <AppFilters class="field is-grouped is-grouped-multiline block__body" :filters="filters" :reset-button="true" :path="basePath"></AppFilters>
         </div>
         <ArticleAsCards :articles="articles" :base-path="basePath" cards-by-row="3"></ArticleAsCards>

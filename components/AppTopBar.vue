@@ -1,5 +1,5 @@
 <template>
-  <div class="app-top-bar is-hidden-mobile">
+  <div class="app-top-bar is-idden-mobile">
     <div class="container">
       <!-- Main container -->
       <nav class="level">

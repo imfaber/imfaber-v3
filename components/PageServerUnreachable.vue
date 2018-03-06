@@ -4,7 +4,7 @@
       <div class="content">
         <div class="has-text-centered container">
           <div class="block block--main">
-            <h1 class="block__header title is-h3 has-text-centered"><span class="codify">Whooops!</span></h1>
+            <h1 class="block__header title is-3 has-text-centered"><span class="codify">Whooops!</span></h1>
             <div class="block__body has-text-centered">
               <p>Sorry, we can't reach server API for now. </p>
             </div>

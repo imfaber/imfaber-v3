@@ -47,7 +47,7 @@
         <div class="block block--main"
              :style="brandColours">
           <div class="block__body">
-            <h1 class="title is-h1">
+            <h1 class="title is-1">
               <a v-if="work.is_online"
                  :href="work.project_link.uri"
                  target="_blank">{{work.title}} <i
@@ -114,7 +114,7 @@
           <div class="sticky" v-stick-in-parent="stikyKitOptions">
             <section class="block">
               <header class="block__header">
-                <h3 class="title is-h3">Role</h3>
+                <h3 class="title is-3">Role</h3>
               </header>
               <div class="block__body">
                 <p>
@@ -137,7 +137,7 @@
 
             <section class="block">
               <header class="block__header">
-                <h3 class="title is-h3">
+                <h3 class="title is-3">
                   Technologies & Skills</h3>
                 <p class="subtitle">
                   Code technologies I got involved while working on this project</p>
@@ -151,7 +151,7 @@
 
             <section class="block">
               <header class="block__header">
-                <h3 class="title is-h3">
+                <h3 class="title is-3">
                   This project was done...</h3>
               </header>
               <div class="block__body block__body--meta">

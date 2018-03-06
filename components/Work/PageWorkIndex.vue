@@ -1,7 +1,10 @@
 <template>
     <AppSection v-if="works" class="page page--work-index">
         <div class="block block--filters">
-            <h1 class="block__header title is-h3 has-text-centered"><span class="codify">Work</span></h1>
+            <div class="block__header">
+                <h1 class="title is-1 has-text-centered is-spaced"><span class="codify">Work</span></h1>
+                <p class="subtitle is-4 has-text-centered">Check out a selection of my best web software development projects.</p>
+            </div>
             <AppFilters class="field is-grouped is-grouped-multiline block__body" :filters="filters" :reset-button="true"></AppFilters>
         </div>
         <WorkAsCards :works="works"></WorkAsCards>
