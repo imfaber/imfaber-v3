@@ -46,11 +46,23 @@
       }
     }
   }
-  //&.block--filters .block__header {
-  //  .subtitle {
-  //    @extend .is-5;
-  //  }
-  //}
+
+  &.block--filters {
+    .field.is-grouped {
+      justify-content: center;
+    }
+
+    .block__body--category {
+      padding-bottom: 0;
+      position: relative;
+      &:after {
+        content: '';
+        @include position(absolute, null $gap -8px);
+        border-bottom: 1px solid $body-color;
+
+      }
+    }
+  }
 
   .block__body {
     @include responsive-padding;

@@ -2,12 +2,26 @@
     <AppSection v-if="articles" class="page page--lab-index">
         <div class="block block--filters">
             <div class="block__header">
-                <h1 class="title is-1 has-text-centered is-spaced"><span class="codify">Laboratory</span></h1>
-                <p class="subtitle is-4 has-text-centered">Tools, modules, experiments and everything else accomplished on my spare software development time.</p>
+                <h1 class="title is-1 has-text-centered is-spaced"><span
+                  class="codify">Laboratory</span></h1>
+                <p class="subtitle is-4 has-text-centered">
+                    Tools, modules, experiments and everything else accomplished on my spare software development time.</p>
             </div>
-            <AppFilters class="field is-grouped is-grouped-multiline block__body" :filters="filters" :reset-button="true" :path="basePath"></AppFilters>
+            <AppFilters
+              class="field is-grouped is-grouped-multiline block__body block__body--category"
+              :filters="categoryFilters"
+              :reset-button="true"
+              filter-name="category"
+              :path="basePath"></AppFilters>
+            <AppFilters
+              class="field is-grouped is-grouped-multiline block__body"
+              :filters="tagFilters"
+              :reset-button="true"
+              filter-name="tag"
+              :path="basePath"></AppFilters>
         </div>
-        <ArticleAsCards :articles="articles" :base-path="basePath" cards-by-row="3"></ArticleAsCards>
+        <ArticleAsCards :articles="articles" :base-path="basePath"
+                        cards-by-row="3"></ArticleAsCards>
     </AppSection>
 </template>
 
@@ -29,7 +43,8 @@
     },
     computed:   {
       ...mapGetters({
-        filters: 'lab/filters'
+        tagFilters:      'lab/tagFilters',
+        categoryFilters: 'lab/categoryFilters'
       }),
     },
     mounted () {

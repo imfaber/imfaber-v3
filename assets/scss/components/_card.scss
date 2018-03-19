@@ -184,8 +184,18 @@
 
   .image {
     overflow: hidden;
+    position: relative;
     img{
       transition: all 0.4s ease;
+    }
+
+    .control {
+      position: static;
+    }
+
+    .tags {
+      z-index: 9;
+      @include position(absolute, 10px 10px null null);
     }
   }
 

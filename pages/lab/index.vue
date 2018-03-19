@@ -9,15 +9,19 @@
     components: {PageLabIndex},
 
     async asyncData ({store, query}) {
-      const filter = query.filter
-      const offset = query.page || 0
-      const limit  = 40
-      let articles = [];
+      const filterTag      = query.tag || []
+      const filterCategory = query.category || []
+      const offset         = query.page || 0
+      const limit          = 40
+      let articles         = [];
 
-      store.dispatch('lab/fetchFilters');
+//      store.dispatch('lab/fetchFilters');
 
-      if (filter && filter.length) {
-        articles = await store.dispatch('lab/findAllByTag', filter, limit, offset);
+      if (filterTag.length || filterCategory.length) {
+        articles = await store.dispatch('lab/findAllByFilters', {
+          tags:       filterTag,
+          categories: filterCategory,
+        }, limit, offset);
       }
       else {
         articles = await store.dispatch('lab/findAll', limit, offset);
@@ -29,17 +33,18 @@
         url:         `${process.env.baseUrl}/lab`,
       }
 
-      console.log(articles);
-
       return {articles, meta};
     },
 
     async fetch ({store}) {
-      if (store.getters['lab/filters'].length) {
-        return
+      if (!store.getters['lab/tagFilters'].length) {
+        const terms = await store.dispatch('lab/fetchAllTags');
+        store.commit('lab/tagFilters', terms)
       }
-      const terms = await store.dispatch('lab/fetchFilters');
-      store.commit('lab/filters', terms)
+      if (!store.getters['lab/categoryFilters'].length) {
+        const terms = await store.dispatch('lab/fetchAllCategories');
+        store.commit('lab/categoryFilters', terms)
+      }
     }
   }
 </script>

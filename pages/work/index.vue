@@ -18,7 +18,7 @@
       const limit  = 40
       let works    = [];
 
-      store.dispatch('work/fetchFilters');
+//      store.dispatch('work/fetchFilters');
 
       if (filter && filter.length) {
         works = await store.dispatch('work/findAllByTechAndSkills', filter, limit, offset);

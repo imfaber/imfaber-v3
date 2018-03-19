@@ -4,7 +4,14 @@
             <BulmaCard :class="`card--article article--${article.slug.value}`">
                 <template v-if="article.image">
                     <figure slot="image" class="image is-16by9">
-                        <img class="lazy-image" v-lazy="article.image.imageFile.meta.derivatives.d5_standard" :alt="article.title" />
+                        <img class="lazy-image"
+                             v-lazy="article.image.imageFile.meta.derivatives.d5_standard"
+                             :alt="article.title"/>
+                          class="tag is-dark">{{article.category.name}}</span>
+                        <AppFilters
+                          :filters="[article.category]"
+                          filter-name="category"
+                          :path="basePath"></AppFilters>
                     </figure>
                 </template>
                 <div class="content" slot="content">
@@ -12,7 +19,10 @@
                 </div>
                 <div slot="footer" class="footer">
                     <AppFilters class="field is-grouped is-grouped-multiline"
-                                :filters="article.tags" :reset-button="false" :path="basePath"></AppFilters>
+                                :filters="article.tags"
+                                :reset-button="false"
+                                filter-name="tag"
+                                :path="basePath"></AppFilters>
                 </div>
             </BulmaCard>
         </nuxt-link>
@@ -25,7 +35,7 @@
   export default {
     components: {BulmaCard, AppFilters},
     props:      {
-      article: {type: Object, default: () => [], required: true},
+      article:  {type: Object, default: () => [], required: true},
       basePath: {type: String, default: '/', required: true}
     },
     mounted() {

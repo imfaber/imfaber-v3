@@ -20,8 +20,8 @@
         <div class="control" v-if="resetButton && filterParams.length">
             <div class="tags has-addons is-active reset">
                 <!--<span class="tag"-->
-                      <!--@click.prevent="reset()">-->
-                    <!--Reset-->
+                <!--@click.prevent="reset()">-->
+                <!--Reset-->
                 <!--</span>-->
                 <span class="tag is-delete" @click.prevent="reset()"></span>
             </div>
@@ -36,16 +36,17 @@
     components: {AppSection},
     props:      {
       path:        {type: String, default: '/work'},
+      filterName:  {type: String, default: 'filter'},
       filters:     {type: Array, default: () => {}},
       resetButton: {type: Boolean, default: false},
     },
 
     computed: {
       filterParams() {
-        if (!this.$route.query.filter) {
-          this.$route.query.filter = [];
+        if (!this.$route.query[this.filterName]) {
+          this.$route.query[this.filterName] = [];
         }
-        let filters = this.$route.query.filter.slice()
+        let filters = this.$route.query[this.filterName].slice()
         if (filters && !Array.isArray(filters)) {
           filters = [filters]
         }
@@ -72,8 +73,8 @@
         this.updateQuery()
       },
       updateQuery(){
-        let query    = Object.assign({}, this.$route.query)
-        query.filter = this.filterParams;
+        let query              = Object.assign({}, this.$route.query)
+        query[this.filterName] = this.filterParams;
         this.$router.push({path: this.path, query: query});
       }
     },
