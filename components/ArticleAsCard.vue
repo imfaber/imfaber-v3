@@ -39,7 +39,7 @@
       basePath: {type: String, default: '/', required: true}
     },
     mounted() {
-      console.log(this.article);
+//      console.log(this.article);
     }
   }
 </script>

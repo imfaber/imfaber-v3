@@ -274,7 +274,7 @@
     },
 
     mounted () {
-      console.log('article', this.article);
+//      console.log('article', this.article);
     },
 
   }
