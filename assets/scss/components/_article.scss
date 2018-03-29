@@ -75,7 +75,7 @@
               font-size: 1.2rem;
               padding: 3px;
               height: 25px;
-              i{
+              i {
                 padding: 0;
               }
             }
@@ -141,7 +141,7 @@
 
       @include from(500px) {
         margin-top: -63px;
-        height:45px;
+        height: 45px;
         a {
           font-size: 1.25rem;
         }
@@ -157,6 +157,18 @@
 
     .social-sharing {
       position: relative;
+      padding-top: 15px;
+
+      span {
+        cursor: pointer;
+        i {
+          color: lighten($body-color, 7%);
+          font-size: 30px;
+        }
+      }
+    }
+
+    *:not(.paragraph--code) + .social-sharing {
       margin: 70px auto 0;
       padding-top: 20px;
       &:before {
@@ -164,13 +176,6 @@
         @include position(absolute, 0 null null);
         @include size(200px, 1px);
         border-top: 1px solid lighten($body-color, 7%);
-      }
-      span {
-        cursor: pointer;
-        i {
-          color: lighten($body-color, 7%);
-          font-size: 30px;
-        }
       }
     }
 
@@ -201,6 +206,9 @@
       .paragraph {
         padding-top: $space-xxl;
         position: relative;
+        &.paragraph--code {
+          padding-top: $space-l;
+        }
       }
 
       h2 {
@@ -222,7 +230,7 @@
             @include position(absolute, -5px null null -22px);
             transition: opacity .5s ease;
 
-            @include tablet{
+            @include tablet {
               left: -30px;
             }
           }
@@ -236,9 +244,10 @@
           position: relative;
           cursor: pointer;
           transition: all .5s ease;
+          max-width: 820px;
 
           &.zoom {
-            transform: scale(1.3);
+            transform: scale(1.4);
           }
         }
 
@@ -246,7 +255,7 @@
 
       .paragraph--quote {
         blockquote {
-          border-left: 3px solid rgba(0,0,0, .84);
+          border-left: 3px solid rgba(0, 0, 0, .84);
           padding: $space-xs 0 $space-xs $space-l;
 
           cite {
@@ -287,6 +296,10 @@
 
           pre, code {
             font-size: .85em;
+            .tag:not(body) {
+              background: none;
+              padding: 0;
+            }
           }
         }
 
@@ -297,7 +310,6 @@
           background: #fff;
         }
       }
-
 
       .code:not(.code--1-block) {
         .code__block {

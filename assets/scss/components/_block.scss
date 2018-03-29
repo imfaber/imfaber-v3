@@ -103,6 +103,11 @@
   padding: 0;
   overflow: hidden;
   margin-top: $gap;
+  height: 100%;
+
+  .card-footer .footer {
+    padding-bottom: 0 !important;
+  }
 }
 
 .block--no-results {

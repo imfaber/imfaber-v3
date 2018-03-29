@@ -20,7 +20,13 @@
                                 <AppFilters
                                   class="field is-grouped is-grouped-multiline column is-narrow"
                                   :path="filterPath"
+                                  filter-name="tag"
                                   :filters="article.tags"></AppFilters>
+                                <AppFilters
+                                  class="field is-grouped is-grouped-multiline column is-narrow"
+                                  :filters="[article.category]"
+                                  filter-name="category"
+                                  :path="filterPath"></AppFilters>
                             </div>
                         </div>
                     </div>
