@@ -211,6 +211,10 @@
         }
       }
 
+      .paragraph--code + .paragraph--text {
+        padding-top: $space-l;
+      }
+
       h2 {
         color: $body-color;
         margin: 0 0 $space-l;
@@ -299,6 +303,13 @@
             .tag:not(body) {
               background: none;
               padding: 0;
+            }
+            .token.attr-name {
+              padding-left: .75em;
+            }
+            .number {
+              font-size: 0.85rem;
+              background: none;
             }
           }
         }

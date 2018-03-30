@@ -111,7 +111,7 @@
 
       <div class="columns">
         <div class="column is-one-third-tablet">
-          <div class="sticky" v-stick-in-parent="stikyKitOptions">
+          <div class="sticky" v-stick-in-parent="stikyKit">
             <section class="block">
               <header class="block__header">
                 <h3 class="title is-3">Role</h3>
@@ -284,9 +284,11 @@
         prevLoading:     false,
         listLoading:     false,
         nextLoading:     false,
-        stikyKitOptions: {
-          parent:     '.columns',
-          offset_top: 70
+        stikyKit: {
+          options: {
+            parent:     '.columns',
+            offset_top: 70
+          },
         },
         brandColours:    {
           'background-color': this.work.background_color.color

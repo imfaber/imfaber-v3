@@ -14,9 +14,9 @@ export default {
     const article = await store.dispatch('lab/findOneBySlug', params.slug);
     const meta = {
       title: article.title,
-      description: striptags(article.body.summary || article.body.value).trim(),
+      description: striptags(article.body.summary || article.body.value || article.body).trim(),
       url: `${process.env.baseUrl}/lab/${article.slug.value}`,
-//      image: article.image.imageFile.meta.derivatives.d10_standard || '',
+      image: article.image.imageFile.meta.derivatives.d10_standard || '',
     }
 
     return {article, meta};
