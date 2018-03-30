@@ -7,7 +7,6 @@
                         <img class="lazy-image"
                              v-lazy="article.image.imageFile.meta.derivatives.d5_standard"
                              :alt="article.title"/>
-                          class="tag is-dark">{{article.category.name}}</span>
                         <AppFilters
                           :filters="[article.category]"
                           filter-name="category"
