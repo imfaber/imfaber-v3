@@ -16,6 +16,7 @@
     "moment": "^2.20.1",
     "nuxt": "1.0.0-rc11",
     "prismjs": "^1.11.0",
+    "sass-loader": "^6.0.7",
     "striptags": "^3.1.1",
     "typed.js": "^2.0.6",
     "vee-validate": "^2.0.3",
@@ -53,7 +54,6 @@
     "karma-jasmine": "^1.1.0",
     "karma-webpack": "^2.0.4",
     "node-sass": "^4.7.2",
-    "push-dir": "^0.4.1",
-    "sass-loader": "^6.0.6"
+    "push-dir": "^0.4.1"
   }
 }
