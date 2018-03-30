@@ -108,6 +108,10 @@
   .card-footer .footer {
     padding-bottom: 0 !important;
   }
+
+  .works & {
+    height: auto;
+  }
 }
 
 .block--no-results {
