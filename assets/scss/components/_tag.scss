@@ -1,6 +1,7 @@
 .tags {
   .tag {
     transition: all .4s ease;
+    cursor: pointer;
   }
   @include tag-color();
 }

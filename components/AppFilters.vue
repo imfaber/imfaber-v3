@@ -80,11 +80,3 @@
     },
   }
 </script>
-
-<style scoped lang="scss">
-    .tags {
-        .tag {
-            cursor: pointer;
-        }
-    }
-</style>
