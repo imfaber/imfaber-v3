@@ -19,13 +19,13 @@
             <div class="navbar-start">
                 <nuxt-link to="/work" class="navbar-item"
                            :class="{'is-active': isActiveItem('work')}">
-                    <span @click="setMenuMobileIsOpened">Work</span>
+                    <span @click="setMenuMobileIsClosed">Work</span>
                 </nuxt-link>
                 <nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">
-                    <span @click="setMenuMobileIsOpened">Lab</span>
+                    <span @click="setMenuMobileIsClosed">Lab</span>
                 </nuxt-link>
                 <nuxt-link to="/contact" class="navbar-item" :class="{'is-active': isActiveItem('contact')}">
-                    <span @click="setMenuMobileIsOpened">Contact</span>
+                    <span @click="setMenuMobileIsClosed">Contact</span>
                 </nuxt-link>
             </div>
 
@@ -55,6 +55,10 @@
     methods:    {
       setMenuMobileIsOpened () {
         this.$store.commit('setMenuMobileIsOpened', !this.$store.state.menuMobileIsOpened)
+      },
+
+      setMenuMobileIsClosed () {
+        this.$store.commit('setMenuMobileIsOpened', false)
       },
 
       isActiveItem(item) {
