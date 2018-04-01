@@ -5,7 +5,7 @@
                 <h1 class="title is-1 has-text-centered is-spaced"><span
                   class="codify">Laboratory</span></h1>
                 <p class="subtitle is-4 has-text-centered">
-                    Tools, modules, experiments and everything else accomplished on my spare software development time.</p>
+                    Side projects, snippets, tutorials and everything else accomplished on my spare software development time.</p>
             </div>
             <AppFilters
               class="field is-grouped is-grouped-multiline block__body block__body--category"

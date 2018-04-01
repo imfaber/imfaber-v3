@@ -29,7 +29,7 @@
 
       const meta = {
         title:       'Lab',
-        description: 'Side projects, experiments and everything else accomplished on my spare software development time.',
+        description: 'Side projects, snippets, tutorials and everything else accomplished on my spare software development time.',
         url:         `${process.env.baseUrl}/lab`,
       }
 

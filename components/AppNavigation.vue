@@ -18,10 +18,15 @@
              :class="{'is-active': this.$store.state.menuMobileIsOpened}">
             <div class="navbar-start">
                 <nuxt-link to="/work" class="navbar-item"
-                           :class="{'is-active': isActiveItem('work')}">Work
+                           :class="{'is-active': isActiveItem('work')}">
+                    <span @click="setMenuMobileIsOpened">Work</span>
                 </nuxt-link>
-                <nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">Lab</nuxt-link>
-                <nuxt-link to="/contact" class="navbar-item" :class="{'is-active': isActiveItem('contact')}">Contact</nuxt-link>
+                <nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">
+                    <span @click="setMenuMobileIsOpened">Lab</span>
+                </nuxt-link>
+                <nuxt-link to="/contact" class="navbar-item" :class="{'is-active': isActiveItem('contact')}">
+                    <span @click="setMenuMobileIsOpened">Contact</span>
+                </nuxt-link>
             </div>
 
             <div class="navbar-end">
@@ -54,7 +59,8 @@
 
       isActiveItem(item) {
         return this.$route.path.substring(1).split('/')[0] === item
-      }
+      },
+
     },
   }
 </script>

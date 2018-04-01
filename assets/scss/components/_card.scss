@@ -177,6 +177,10 @@
   //background: $white;
   transition: all 0.4s ease;
 
+  @include mobile {
+    padding-bottom: $space-m;
+  }
+
   .title {
     //color: $body-color;
     margin-bottom: 0;

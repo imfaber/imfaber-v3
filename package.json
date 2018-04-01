@@ -33,7 +33,7 @@
     "dev": "HOST=0.0.0.0 PORT=3331 node_modules/.bin/nuxt",
     "build": "node_modules/.bin/nuxt build",
     "analyse": "node_modules/.bin/nuxt build --analyse",
-    "start": "pm2 start ./node_modules/nuxt/bin/nuxt-start -i max --attach",
+    "start": "pm2 start ./node_modules/nuxt/bin/nuxt-start --name server_imfaber.me",
     "start-orig": "node_modules/.bin/nuxt start",
     "generate": "node_modules/.bin/nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",

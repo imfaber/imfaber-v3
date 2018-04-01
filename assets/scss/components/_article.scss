@@ -81,17 +81,29 @@
             }
           }
           a {
+            &:not(.disqus-comment-count) {
+              padding-left: 40px;
+            }
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
             &:before {
               content: attr(data-index);
               @extend .tag;
               @extend .is-info;
-              margin-right: $space-s;
+              width: 25px;
+              @include position(absolute, 0 null null 0);
             }
 
             &:hover {
               &:before {
                 text-decoration: none;
               }
+            }
+
+            .text {
+              cursor: pointer;
             }
           }
         }
@@ -311,6 +323,17 @@
               font-size: 0.85rem;
               background: none;
             }
+
+            &.language-bash {
+              .token.function {
+                color: #ccc;
+              }
+            }
+
+            .token.block-comment, .token.cdata, .token.comment, .token.doctype, .token.prolog {
+              color: #5f5f5f;
+            }
+
           }
         }
 

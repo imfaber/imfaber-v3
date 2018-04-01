@@ -56,7 +56,7 @@
                                       v-if="paragraph.field_title">
                                         <a :href="'#paragraph-' + paragraph.id"
                                            :data-index="index + 1">
-                                            {{paragraph.field_title}}
+                                            <span class="text">{{paragraph.field_title}}</span>
                                         </a>
                                     </li>
                                     <li>
