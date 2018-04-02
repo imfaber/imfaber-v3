@@ -55,7 +55,7 @@
                                       v-for="(paragraph, index) in article.paragraphs"
                                       v-if="paragraph.field_title">
                                         <a :href="'#paragraph-' + paragraph.id"
-                                           :data-index="index + 1">
+                                           :data-index="getPargraphIndex(paragraph.id)">
                                             <span class="text">{{paragraph.field_title}}</span>
                                         </a>
                                     </li>
@@ -217,6 +217,11 @@
       article:    {type: Object, default: () => {}},
       filterPath: {type: String, default: ''},
     },
+    data () {
+      return {
+        paragraphIndexes: {}
+      }
+    },
     computed:   {
       createdAtFormatted(){
         return moment(String(this.article.createdAt)).locale('en-gb').format('LL')
@@ -224,6 +229,9 @@
     },
 
     methods: {
+      getPargraphIndex(pId){
+        return this.paragraphIndexes[pId] || 1
+      },
       ytVideoIdFromUrl (url) {
         if (this.$youtube) {
           return this.$youtube.getIdFromURL(url)
@@ -279,8 +287,14 @@
       },
     },
 
-    mounted () {
-//      console.log('article', this.article);
+    created () {
+      let count = 0;
+      this.article.paragraphs.forEach((elem) => {
+        if (elem.field_title) {
+          count++
+          this.paragraphIndexes[elem.id] = count
+        }
+      })
     },
 
   }
