@@ -1,5 +1,5 @@
 <template>
-    <social-sharing network-tag="div" :url="pageUrl()" inline-template>
+    <social-sharing class="social-sharing columns is-mobile is-centered" network-tag="div" :url="pageUrl()" inline-template>
         <div class="social-sharing columns is-mobile is-centered">
             <network network="facebook" class="column is-narrow">
                 <span class="hint--top hint--rounded hint--bounce"
