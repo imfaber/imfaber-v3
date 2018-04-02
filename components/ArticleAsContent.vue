@@ -2,82 +2,87 @@
     <article class="article article--lab"
              :class="'article--' + article.tags[0].machine_name">
         <header class="article__header">
-            <div class="block block--transparent">
-                <div class="block__body">
-                    <h1 class="title is-2 has-text-centered">
-                        <span class="codify">{{article.title}}</span>
-                    </h1>
+            <div class="article-header__wrapper">
+                <div class="block block--transparent">
+                    <div class="block__header">
+                        <h1 class="title is-2 has-text-centered">
+                            <span class="codify">{{article.title}}</span>
+                        </h1>
 
-                    <div
-                      class="columns is-mobile is-centered is-multiline article-meta">
-                        <div class="column is-narrow">
-                            <time :datetime="article.createdAt">{{createdAtFormatted}}</time>
-                        </div>
-                        <div class="column is-narrow">
-                            <div class="columns is-mobile is-centered">
-                                <i class="column is-narrow fa fa-tags"
-                                   aria-hidden="true"></i>
-                                <AppFilters
-                                  class="field is-grouped is-grouped-multiline column is-narrow"
-                                  :path="filterPath"
-                                  filter-name="tag"
-                                  :filters="article.tags"></AppFilters>
-                                <AppFilters
-                                  class="field is-grouped is-grouped-multiline column is-narrow"
-                                  :filters="[article.category]"
-                                  filter-name="category"
-                                  :path="filterPath"></AppFilters>
+                        <div
+                          class="columns is-mobile is-centered is-multiline article-meta">
+                            <div class="column is-narrow">
+                                <time :datetime="article.createdAt">{{createdAtFormatted}}</time>
+                            </div>
+                            <div class="column is-narrow">
+                                <div class="columns is-mobile is-centered">
+                                    <i class="column is-narrow fa fa-tags"
+                                       aria-hidden="true"></i>
+                                    <AppFilters
+                                      class="field is-grouped is-grouped-multiline column is-narrow"
+                                      :path="filterPath"
+                                      filter-name="tag"
+                                      :filters="article.tags"></AppFilters>
+                                    <AppFilters
+                                      class="field is-grouped is-grouped-multiline column is-narrow"
+                                      :filters="[article.category]"
+                                      filter-name="category"
+                                      :path="filterPath"></AppFilters>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div v-if="article.category.machine_name=='snippet'">
-                        <figure class="image">
-                            <img class="lazy-image"
-                                 v-lazy="article.image.imageFile.meta.derivatives.d8_standard"
-                                 :alt="article.title">
-                        </figure>
-                        <AppShare></AppShare>
-                    </div>
-                    <div class="columns is-desktop" v-else>
-                        <div class="column is-three-quarters-desktop">
-                            <figure class="image is-16by9">
+                </div>
+                <div class="block block--transparent">
+                    <div class="block__body">
+                        <div v-if="article.category.machine_name=='snippet'">
+                            <figure class="image">
                                 <img class="lazy-image"
-                                     v-lazy="article.image.imageFile.meta.derivatives.d10_standard"
+                                     v-lazy="article.image.imageFile.meta.derivatives.d8_standard"
                                      :alt="article.title">
                             </figure>
+                            <AppShare></AppShare>
                         </div>
-                        <div class="column">
-                            <div class="table-of-contents">
-                                <h3 class="title is-4">Table of contents</h3>
-                                <ol>
-                                    <li
-                                      v-for="(paragraph, index) in article.paragraphs"
-                                      v-if="paragraph.field_title">
-                                        <a :href="'#paragraph-' + paragraph.id"
-                                           :data-index="getPargraphIndex(paragraph.id)">
-                                            <span class="text">{{paragraph.field_title}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
+                        <div class="columns is-desktop" v-else>
+                            <div class="column is-three-quarters-desktop">
+                                <figure class="image is-16by9">
+                                    <img class="lazy-image"
+                                         v-lazy="article.image.imageFile.meta.derivatives.d10_standard"
+                                         :alt="article.title">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <div class="table-of-contents">
+                                    <h3 class="title is-4">Table of contents</h3>
+                                    <ol>
+                                        <li
+                                          v-for="(paragraph, index) in article.paragraphs"
+                                          v-if="paragraph.field_title">
+                                            <a :href="'#paragraph-' + paragraph.id"
+                                               :data-index="getPargraphIndex(paragraph.id)">
+                                                <span class="text">{{paragraph.field_title}}</span>
+                                            </a>
+                                        </li>
+                                        <li>
                                         <span class="tag is-info">
                                             <i
                                               class="column is-narrow fa fa-comments"
                                               aria-hidden="true"></i>
                                         </span>
-                                        <a href="#disqus_thread"
-                                           class="disqus-comment-count"
-                                           :data-disqus-identifier="article.id">
-                                            Comments
-                                        </a>
-                                    </li>
-                                </ol>
+                                            <a href="#disqus_thread"
+                                               class="disqus-comment-count"
+                                               :data-disqus-identifier="article.id">
+                                                Comments
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <AppShare></AppShare>
                             </div>
-                            <AppShare></AppShare>
                         </div>
+
+
                     </div>
-
-
                 </div>
             </div>
         </header>
@@ -185,7 +190,9 @@
             </div>
         </div>
 
-        <div id="disqus_thread"></div>
+        <div class="block block--transparent">
+            <div id="disqus_thread"></div>
+        </div>
         <script>
           var disqus_config = function () {
             this.page.url        = location.origin + location.pathname;
