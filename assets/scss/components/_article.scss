@@ -294,11 +294,23 @@
           background: #fff;
           text-align: right;
           span {
-            @include position(relative, 25px null null null);
+            @include position(relative, 20px null null null);
             text-transform: uppercase;
             font-size: .75rem !important;
             @extend .tag;
             @extend .is-dark;
+          }
+        }
+
+        .toolbar-item {
+          @extend .paragraph__container;
+        }
+        pre.code-toolbar > .toolbar {
+          top: 25px;
+          left: 0;
+          font-size: $size-6;
+          a {
+            padding: 3px 10px !important;
           }
         }
 
@@ -354,7 +366,7 @@
           &:last-child .code__header {
             background: none;
             border-top: 1px solid $grey;
-            top: -5px;
+            //top: -5px;
           }
         }
       }

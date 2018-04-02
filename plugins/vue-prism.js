@@ -14,6 +14,10 @@ import 'prismjs/components/prism-scss.min';
 import 'prismjs/components/prism-twig.min';
 import 'prismjs/components/prism-typescript.min';
 import 'prismjs/components/prism-bash.min';
+import 'prismjs/plugins/toolbar/prism-toolbar.min';
+import 'prismjs/plugins/toolbar/prism-toolbar.css';
+import 'clipboard'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min';
 
 const VuePrism = {
   install (Vue, options) {
