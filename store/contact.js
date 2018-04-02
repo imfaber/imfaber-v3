@@ -17,7 +17,6 @@ export const actions = {
         "mail": payload.email,
         "subject": payload.subject,
         "message": payload.message,
-        "id": '0',
         "uuid": `${Date.now()}`,
         "copy": true,
         "created": Math.floor(Date.now() / 1000),
