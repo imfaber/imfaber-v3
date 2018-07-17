@@ -30,7 +30,7 @@
       const meta = {
         title:       'Blog',
         description: 'Articles, side projects, snippets, tutorials and everything else accomplished on my spare software development time.',
-        url:         `${process.env.baseUrl}/lab`,
+        url:         `${process.env.baseUrl}/blog`,
       }
 
       return {articles, meta};

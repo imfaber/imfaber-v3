@@ -15,7 +15,7 @@ export default {
     const meta = {
       title: article.title,
       description: striptags(article.body.summary || article.body.value || article.body).trim(),
-      url: `${process.env.baseUrl}/lab/${article.slug.value}`,
+      url: `${process.env.baseUrl}/blog/${article.slug.value}`,
       image: article.image.imageFile.meta.derivatives.d10_standard || '',
     }
 
