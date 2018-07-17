@@ -15,7 +15,7 @@
                     <nuxt-link to="/contact"
                                class="hint--bottom hint--rounded hint--bounce hint--success"
                                aria-label="Get in touch">
-                        <span><b>Have a project for me?</b><br/>I'm available for hire from <strong>July 2018</strong></span>
+                        <span><b>Have a project for me?</b><br/>I'm available for hire!</span>
                     </nuxt-link>
                 </p>
             </div>

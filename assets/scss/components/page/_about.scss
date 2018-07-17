@@ -1,0 +1,101 @@
+.page--about {
+
+  .container {
+    max-width: 750px !important;
+  }
+
+  .block {
+    h1 {
+      font-size: $size-4;
+      color: #cfcfcf;
+      font-family: NunitoBold, Helvetica Neue, Helvetica, Arial, sans-serif;
+      margin-top: 1em !important;
+      margin-bottom: 1em !important;
+    }
+
+    .profile-image {
+      display: block;
+      margin: 1em auto 2em;
+      border-radius: 50%;
+      max-width: 250px;
+      border: 2px solid $green;
+
+
+      @include tablet {
+        float: left;
+        margin: 1em 2em 2em 0;
+        -webkit-shape-outside: circle();
+        shape-outside: circle();
+        max-width: 250px;
+      }
+    }
+
+    p {
+      font-size: $size-6;
+      color: $grey;
+      strong  {
+        color: $grey-light;
+        font-weight: bold;
+      }
+    }
+
+    &.block--carousel {
+      margin: 5em 0 0;
+      h2 {
+        color: $grey-light;
+        margin-bottom: 1em;
+      }
+    }
+
+    .VueCarousel-slide {
+      color: $grey;
+      text-align: center;
+      a {
+        //color: $grey-light;
+        margin-bottom: 1em;
+        display: block;
+        strong  {
+          position: relative;
+          top: 5px;
+        }
+
+        * {
+          display: block;
+        }
+
+        img {
+          border-radius: 50%;
+          margin: auto;
+          @include size(60px);
+          border: 1px solid $green;
+        }
+      }
+
+      blockquote{
+        font-size: $size-4;
+        color: $grey-lighter;
+      }
+    }
+
+    .VueCarousel-pagination {
+      button {
+        background: $grey !important;
+      }
+
+      .VueCarousel-dot--active button {
+        background: $green !important;
+      }
+    }
+
+    @include tablet {
+      h1 {
+        font-size: $size-3;
+      }
+      p {
+        font-size: $size-5;
+      }
+    }
+  }
+
+}
+

@@ -15,4 +15,12 @@ body {
 
 a {
   transition: all .4s ease;
+
+  &.link--green {
+    color: darken($green, 15%) !important;
+
+    &:hover, &:focus {
+      color: $green!important;
+    }
+  }
 }

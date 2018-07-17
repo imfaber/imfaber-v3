@@ -13,6 +13,7 @@ module.exports = {
     '~plugins/vue-youtube-embed',
     '~plugins/vue-social-sharing',
     '~plugins/vue-prism',
+    '~plugins/vue-carousel',
     {src: '~plugins/vue-particles', ssr: false},
     '~plugins/page-mixins'
   ],

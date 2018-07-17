@@ -5,8 +5,8 @@
         <div class="block block--main">
           <h1 class="block__header title is-3 has-text-centered"><span class="codify">Get in touch</span></h1>
           <div class="block__body has-text-centered">
-            <p class="is-size-5">If you wanna get in touch, talk to me about a project collaboration or just say hi,
-              feel free to contact me using the following social media or the form below.</p>
+            <p class="is-size-5">If you wanna get in touch, talk to me about a project, collaboration or just say hi,
+              feel free to contact me by <a class="link--green" href="mailto:fabrizio@imfaber.me" title="Get in touch by email">email</a>, using the following social media or the form below.</p>
             <nav class="level has-text-centered">
               <div class="level-left">
                 <div class="level-item has-text-centered">
