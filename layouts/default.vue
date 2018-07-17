@@ -7,6 +7,10 @@
         <div class="page-canvas">
             <div class="container is-fluid">
                 <nuxt/>
+
+                <footer class="site-footer">
+                    <div class="">© 2018 Imfaber - Fabrizio Meinero - VAT: ES Y6176391P</div>
+                </footer>
             </div>
         </div>
         <!--<vue-particles-->

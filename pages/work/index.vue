@@ -29,7 +29,7 @@
 
       const meta = {
         title:       'Work',
-        description: 'Check out my latest web software development portfolio projects.',
+        description: 'Check out a selection of the best projects I worked on.',
         url:         `${process.env.baseUrl}/work`,
       }
 

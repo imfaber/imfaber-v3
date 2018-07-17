@@ -1,11 +1,11 @@
 <template>
-    <AppSection v-if="articles" class="page page--lab-index">
+    <AppSection v-if="articles" class="page page--blog-index">
         <div class="block block--filters">
             <div class="block__header">
                 <h1 class="title is-1 has-text-centered is-spaced"><span
-                  class="codify">Laboratory</span></h1>
+                  class="codify">Blog</span></h1>
                 <p class="subtitle is-4 has-text-centered">
-                    Side projects, snippets, tutorials and everything else accomplished on my spare software development time.</p>
+                    Articles, side projects, snippets, tutorials and everything else accomplished on my spare software development time.</p>
             </div>
             <AppFilters
               class="field is-grouped is-grouped-multiline block__body block__body--category"
@@ -38,13 +38,13 @@
     },
     data () {
       return {
-        basePath: '/lab'
+        basePath: '/blog'
       }
     },
     computed:   {
       ...mapGetters({
-        tagFilters:      'lab/tagFilters',
-        categoryFilters: 'lab/categoryFilters'
+        tagFilters:      'blog/tagFilters',
+        categoryFilters: 'blog/categoryFilters'
       }),
     },
     mounted () {

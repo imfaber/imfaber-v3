@@ -11,3 +11,10 @@ $size: 320px;
   //perspective: 1200px;
 
 }
+
+footer.site-footer {
+  text-align: center;
+  position: relative;
+  top: -5px;
+  z-index: 0;
+}

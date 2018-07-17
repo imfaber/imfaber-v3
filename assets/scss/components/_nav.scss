@@ -102,14 +102,30 @@
 
   &.is-active {
     //height: calc(100vh - 90px);
-    height: 250px;
+    height: 380px;
     //height: 190px;
+
+    .navbar-start {
+      position: relative;
+      padding-bottom: 1em;
+      margin-bottom: 0.6em;
+
+      &:after {
+        content: '';
+        display: block;
+        @include position(absolute, null null 0 50%);
+        @include size(140px, 1px);
+        background: $grey;
+        margin-left: -70px;
+      }
+    }
   }
 
   .navbar-end {
     display: flex;
     justify-content: center;
   }
+
 
   @include desktop{
     height: auto;

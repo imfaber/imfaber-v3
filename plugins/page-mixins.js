@@ -71,7 +71,7 @@ const PageMixins = {
         }
 
         transition.beforeEnter = function (el) {
-          const $blocks = $(blockClass, el).slice(0, 10)
+          const $blocks = $(blockClass).slice(0, 10)
           $blocks.each((i, elem) => {
             $(elem).addClass(`${animation}-block-in-setup`)
           })
@@ -80,7 +80,7 @@ const PageMixins = {
         transition.afterEnter = function (el, done) {
           $('html,body').animate({scrollTop: 0}, 0)
           setTimeout(() => {
-            const $blocks = $(blockClass, el).slice(0, 10)
+            const $blocks = $(blockClass).slice(0, 10)
             $blocks.reverse().each((i, elem) => {
               setTimeout(() => {
                 $(elem)
@@ -93,14 +93,14 @@ const PageMixins = {
         }
 
         transition.leave = function (el, done) {
-          $(blockClass, el).reverse().each((i, elem) => {
+          $(blockClass).reverse().each((i, elem) => {
             setTimeout(() => $(elem).toggleClass(`${animation}-block-out`), i * delay)
           })
           setTimeout(done, $(blockClass, el).length * delay + 500)
         }
 
         transition.afterLeave = function (el) {
-          $(blockClass, el).each((i, elem) => {
+          $(blockClass).each((i, elem) => {
             $(elem).toggleClass(`${animation}-block-out`)
           })
         }

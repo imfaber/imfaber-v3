@@ -17,12 +17,20 @@
         <div id="app-menu" class="navbar-menu"
              :class="{'is-active': this.$store.state.menuMobileIsOpened}">
             <div class="navbar-start">
+                <nuxt-link to="/about" class="navbar-item"
+                           :class="{'is-active': isActiveItem('about')}">
+                    <span @click="setMenuMobileIsClosed">About</span>
+                </nuxt-link>
                 <nuxt-link to="/work" class="navbar-item"
                            :class="{'is-active': isActiveItem('work')}">
                     <span @click="setMenuMobileIsClosed">Work</span>
                 </nuxt-link>
-                <nuxt-link to="/lab" class="navbar-item" :class="{'is-active': isActiveItem('lab')}">
-                    <span @click="setMenuMobileIsClosed">Lab</span>
+                <nuxt-link to="/services" class="navbar-item"
+                           :class="{'is-active': isActiveItem('services')}">
+                    <span @click="setMenuMobileIsClosed">Services</span>
+                </nuxt-link>
+                <nuxt-link to="/blog" class="navbar-item" :class="{'is-active': isActiveItem('blog')}">
+                    <span @click="setMenuMobileIsClosed">Blog</span>
                 </nuxt-link>
                 <nuxt-link to="/contact" class="navbar-item" :class="{'is-active': isActiveItem('contact')}">
                     <span @click="setMenuMobileIsClosed">Contact</span>
