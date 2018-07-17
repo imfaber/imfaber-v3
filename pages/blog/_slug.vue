@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PageBlogSlug from '~/components/blog/PageBlogSlug'
+import PageBlogSlug from '~/components/Blog/PageBlogSlug'
 import striptags from 'striptags'
 
 export default {
