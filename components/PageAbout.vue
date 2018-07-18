@@ -26,10 +26,10 @@
             </div>
 
             <div class="block block--transparent block--carousel">
-                <h2 class="title is-3 has-text-centered is-spaced"><span class="codify">What others say...</span></h2>
+                <h2 class="title is-4 has-text-centered is-spaced"><span class="codify">What others say...</span></h2>
                 <carousel autoplay="true"
                           perPage="1"
-                          autoplayTimeout="6000"
+                          autoplayTimeout="30000"
                           navigationEnabled="true">
                     <slide>
                         <a href="https://www.linkedin.com/in/rich-saddington/" target="_blank">
