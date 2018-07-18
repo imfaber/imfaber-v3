@@ -18,7 +18,7 @@
                 <ul>
                   <li>HTML5</li>
                   <li>CSS3, SASS, LESS</li>
-                  <li>Javascript, jQuery, VueJS, AngularJS, React</li>
+                  <li>Javascript, jQuery, Vue, Angular, React</li>
                   <li>Automation with Gulp, Grunt or NPM</li>
                 </ul>
               </div>
