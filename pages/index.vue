@@ -4,7 +4,6 @@
 
 <script>
 import PageIndex from '~/components/PageIndex'
-import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/lib/api'
 
 export default {
   components: { PageIndex },
