@@ -35,7 +35,7 @@
                 </div>
                 <div class="block block--transparent">
                     <div class="block__body">
-                        <div v-if="article.category.machine_name=='snippet'">
+                        <div v-if="!article.table_of_contents">
                             <figure class="image">
                                 <img class="lazy-image"
                                      v-lazy="article.image.imageFile.meta.derivatives.d8_standard"
