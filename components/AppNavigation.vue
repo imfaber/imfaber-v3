@@ -25,10 +25,10 @@
                            :class="{'is-active': isActiveItem('work')}">
                     <span @click="setMenuMobileIsClosed">Work</span>
                 </nuxt-link>
-                <nuxt-link to="/services" class="navbar-item"
+                <!-- <nuxt-link to="/services" class="navbar-item"
                            :class="{'is-active': isActiveItem('services')}">
                     <span @click="setMenuMobileIsClosed">Services</span>
-                </nuxt-link>
+                </nuxt-link> -->
                 <nuxt-link to="/blog" class="navbar-item" :class="{'is-active': isActiveItem('blog')}">
                     <span @click="setMenuMobileIsClosed">Blog</span>
                 </nuxt-link>

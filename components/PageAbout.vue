@@ -9,7 +9,7 @@
             <div class="block block--transparent block--text">
                 <img class="profile-image" src="/images/imfaber-profile.png" alt="Imfaber - Fabrizio Meinero">
                 <p>
-                    I am <strong>Fabrizio Meinero</strong> (web name <strong>Imfaber</strong> ), a freelance web developer based in Madrid (Spain) but also active in the UK and Italy.<br>
+                    I am <strong>Fabrizio Meinero</strong> (web name <strong>Imfaber</strong> ), a web developer based in Madrid (Spain) but also active in the UK and Italy.<br>
                     With over 10 years of commercial experience my skills are broad: from front-end to back-end, from UI/UX to devops. I enjoy every aspect of web development, and love building web sites & apps from start to end, for clients all over the world.
                 </p>
             </div>

@@ -1,22 +1,12 @@
 <template>
     <div class="hello">
-
         <div>
             <div class="block block--transparent"><span class="emoticon">👋</span></div>
             <h1 class="block block--transparent">Hello, my name is Fabrizio Meinero.</h1>
             <div class="block block--transparent">
-                <p>I'm a freelance Full-Stack Web Developer and I love to build</p>
+                <p>I'm a Full-Stack Web Developer and I love to build</p>
                 <p>
                     <span class="typed-text"></span>
-                </p>
-            </div>
-            <div class="block block--transparent block--availability">
-                <p>
-                    <nuxt-link to="/contact"
-                               class="hint--bottom hint--rounded hint--bounce hint--success"
-                               aria-label="Get in touch">
-                        <span><b>Have a project for me?</b><br/>I'm available for hire!</span>
-                    </nuxt-link>
                 </p>
             </div>
         </div>
