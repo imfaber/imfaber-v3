@@ -9,7 +9,7 @@
                 <nuxt/>
 
                 <footer class="site-footer">
-                    <div class="">© 2018 Imfaber - Fabrizio Meinero - VAT: ES Y6176391P</div>
+                    <div class="">© {{ year }} Imfaber - Fabrizio Meinero</div>
                 </footer>
             </div>
         </div>
@@ -38,6 +38,14 @@
   import AppLogo from '~/components/AppLogo'
   export default  {
     components: {AppNavigation, AppLogo},
+    data() {
+        const year = new Date().getFullYear();
+
+        return {
+            year
+        }
+    },
+
   }
 </script>
 

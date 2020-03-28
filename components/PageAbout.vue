@@ -33,7 +33,7 @@
                           navigationEnabled="true">
                     <slide>
                         <a href="https://www.linkedin.com/in/rich-saddington/" target="_blank">
-                            <img alt="Rich Saddington" height="56" width="56" src="https://media.licdn.com/dms/image/C4E03AQFmtqeRu3pc_w/profile-displayphoto-shrink_100_100/0?e=1537401600&amp;v=beta&amp;t=kMDWJ-P0xrwu_QMXoPmfNrkSmDm0PmFx_9Ezsh6jgOM">
+                            <img alt="Rich Saddington" height="56" width="56" src="~/assets/images/rich.jpeg">
                             <strong>Rich Saddington</strong>
                             <smaller>Technical Account Manager at Acquia</smaller>
                         </a>
@@ -41,7 +41,7 @@
                     </slide>
                     <slide>
                         <a href="https://www.linkedin.com/in/uxandy" target="_blank">
-                            <img alt="Andy Cole" height="56" width="56" src="https://media.licdn.com/dms/image/C4E03AQGKFQOuOpXKfQ/profile-displayphoto-shrink_100_100/0?e=1537401600&v=beta&t=UQflZJhgaGjaAxrED43wQw2nBiIwSlDMoOnT7on5a18">
+                            <img alt="Andy Cole" height="56" width="56" src="~/assets/images/andy.jpeg">
                             <strong>Andy Cole</strong>
                             <smaller>Freelance UX Consultant</smaller>
                         </a>
@@ -49,7 +49,7 @@
                     </slide>
                     <slide>
                         <a href="https://www.linkedin.com/in/mrmjenkins" target="_blank">
-                            <img alt="Mike Jenkins" height="56" width="56" src="https://media.licdn.com/dms/image/C4E03AQGA4f7lXRU-5A/profile-displayphoto-shrink_100_100/0?e=1537401600&v=beta&t=FORDVPEyTAGUzO7z8Wbk2wnGqu4MCXw7B3XrTFPX7eU">
+                            <img alt="Mike Jenkins" height="56" width="56" src="~/assets/images/mike.jpeg">
                             <strong>Mike Jenkins</strong>
                             <smaller>MD / Strategy Director at Positive</smaller>
                         </a>
