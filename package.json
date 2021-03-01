@@ -17,7 +17,7 @@
     "moment": "^2.20.1",
     "node-sass": "^4.8.3",
     "nuxt": "1.0.0-rc11",
-    "prismjs": "^1.11.0",
+    "prismjs": "^1.23.0",
     "sass-loader": "^6.0.7",
     "striptags": "^3.1.1",
     "typed.js": "^2.0.6",
