@@ -15,7 +15,7 @@
     "hint.css": "^2.5.0",
     "jsonapi-parse": "1.2.0",
     "moment": "^2.20.1",
-    "node-sass": "^4.8.3",
+    "node-sass": "^7.0.0",
     "nuxt": "1.0.0-rc11",
     "prismjs": "^1.11.0",
     "sass-loader": "^6.0.7",
