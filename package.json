@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/google-tag-manager": "^1.1.0",
-    "ajv": "^6.2.0",
+    "ajv": "^6.12.3",
     "axios": "0.16.2",
     "bourbon": "^5.0.0",
     "bulma": "^0.6.2",
