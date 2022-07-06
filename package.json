@@ -14,7 +14,7 @@
     "font-awesome": "^4.7.0",
     "hint.css": "^2.5.0",
     "jsonapi-parse": "1.2.0",
-    "moment": "^2.20.1",
+    "moment": "^2.29.4",
     "node-sass": "^4.8.3",
     "nuxt": "1.0.0-rc11",
     "prismjs": "^1.11.0",
