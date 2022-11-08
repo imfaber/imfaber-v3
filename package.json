@@ -16,7 +16,7 @@
     "jsonapi-parse": "1.2.0",
     "moment": "^2.20.1",
     "node-sass": "^4.8.3",
-    "nuxt": "1.0.0-rc11",
+    "nuxt": "2.15.8",
     "prismjs": "^1.11.0",
     "sass-loader": "^6.0.7",
     "striptags": "^3.1.1",
